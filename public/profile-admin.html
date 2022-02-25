@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Landing Page</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/modals/modal-registrartarjeta.css" />
+    <link rel="stylesheet" href="css/profile-administrador.css">
+    <link rel="stylesheet" href="css/solicitud-ingreso-parqueos.css" />
+
+</head>
+
+<body>
+    <div id="page-container profile-admin">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <!-- Name del active user -->
+                    <span id="nav-user-name"></span>
+                    <div class="round-img">
+                        <img id="nav-user-img" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a id="btn-editar-datos-empresa">Editar perfil</a></li>
+                        <li><a href="./index.html">Cerrar sesion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="/homeapp-admin.html" class="link">Home</a>
+                <a href="/profile-admin.html" class="link active">Mantenimientos</a>
+                <a href="#" class="link">Parqueos</a>
+                <a href="#" class="link">Registros</a>
+                <a href="/reportes-admin.html" class="link">Reportes</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+                <!-- Profile section -->
+                <section class="profile">
+                    <div class="profile-container">
+                        <div class="img-container">
+                            <img id="profile-user-photo" src="./img/erick.jpg" alt="" />
+                        </div>
+
+                        <div class="info-personal">
+                            <h2 id="profile-user-nombre"></h2>
+                            <h3>Administrador General de Park It</h3>
+                            <p id="profile-user-numero_id"></p>
+                            <p id="profile-user-correo"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-content">
+
+                    <section class="mantenimiento-ifam-parkit">
+
+                        <div class="two-colum">
+                            <h2>IFAM </h2>
+                            <h2>Park IT </h2>
+                        </div>
+
+                        <div class="two-colum">
+                            <div class="col1 banner-black">
+
+                                <div class="">
+                                    <input class="input-textbk first-input" id="txt-nombre-IFAM" name="nombre-IFAM" placeholder="IFAM - Instituto de Fomento y Asesoría Municipal" type="text">
+                                </div>
+
+                                <div class="tel-mail-container ipt-container">
+                                    <div>
+                                        <input class="input-textbk" id="txt_tel" name="tel-IFAM" placeholder="2250-0000 ext 2010 " type="text">
+                                    </div>
+                                    <div>
+                                        <input class="input-textbk" id="txt-email" name="mail-IFAM" placeholder="info@parkit.com" type="email">
+                                    </div>
+                                </div>
+
+                                <div class="ipt-container">
+                                    <div class="redes-IFAM">
+                                        <span class="fab fa-facebook-square icon-style"></span>
+                                        <input class="input-textbk" id="txt-url-fb" name="fb-IFAM" placeholder="www.facebook.com/IFAM" type="text">
+                                    </div>
+                                    <div class="redes-IFAM">
+                                        <span class="fab fa-instagram icon-style"></span>
+                                        <input class="input-textbk" id="txt-url-ig" name="ig-IFAM" placeholder="www.instagram.com/IFAM" type="text">
+                                    </div>
+
+                                    <div class="redes-IFAM">
+                                        <span class="fas fa-globe icon-style"></span>
+                                        <input class="input-textbk" id="txt-url-web" name="web-IFAM" placeholder="www.ifam.go.cr" type="text">
+                                    </div>
+                                </div>
+                                <div class="dob-container">
+                                    <p> Actualizar logo IFAM:</p>
+                                    <span class="fas fa-file-alt icon-photo"></span>
+                                    <input class="logo" type="file" id="file-logo" name="logo" />
+                                </div>
+
+                                <button class="btn orange btn_col1" id="btn-actualizar-ifam">Actualizar</button>
+                            </div>
+
+                            <div class="col2 banner-black">
+
+                                <div class="first-input ipt-cont">
+                                    <div class="cambio-container">
+                                        <div class="simbolo">$</div>
+                                        <p class="leyenda">Tipo de cambio</p>
+
+                                        <input class="input-textbk input-tipo-cambio" id="tipo-cambio-dolar" name="nombre" type="number" placeholder="589.00">
+                                    </div>
+                                </div>
+
+                                <div class="ipt-container">
+                                    <div class="cambio-container input-medio">
+                                        <div class="simbolo">€</div>
+                                        <p class="leyenda">Tipo de cambio</p>
+
+                                        <input class="input-textbk input-tipo-cambio" id="tipo-cambio-euro" type="number" name="nombre " placeholder="589.00">
+                                    </div>
+                                </div>
+
+                                <div class="ipt-container ipt-last">
+                                    <div class="cambio-container">
+                                        <div class="simbolo">%</div>
+                                        <p class="leyenda">Porcentaje Park It</p>
+
+                                        <input class="input-textbk input-tipo-cambio" id="porcentaje_ifam" name="nombre" type="number" placeholder="15%" min="0" max="100">
+                                    </div>
+                                </div>
+                                <button class="btn orange par" id="btn-actualizar-tipo-cambio-porcentaje">Actualizar</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="columna-agregar-parqueos">
+                        <h2>Agregar parqueos</h2>
+
+                        <div id="listado-parqueos-pendientes" class="listado-parqueos banner-black">
+                        </div>
+
+                    </section>
+
+                    <!-- Registrar empleados -->
+                    <section class="form-all-black dashboard">
+                        <h2>Registrar encargado de empresa</h2>
+
+                        <form id="rgt-empleados">
+                            <div class="form">
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <input class="input-text" name="nombre" placeholder="Nombre" id="txt-nombre_enc_emp" required/>
+                                        <input class="input-text" name="Primer_apellido" placeholder="Primer apellido" id="txt-primer_apellido_enc_emp" required/>
+
+                                        <select class="input-select" name="opcion" id="lst-tipo_id" required>
+                                          <option value="" disabled selected hidden
+                                         >Tipo de identificación</option>
+                                        <option value="Juridica">Cédula jurídica</option>
+                                        <option value="Nacional">Cédula nacional</option>
+                                        <option value="Dimex">DIMEX</option>
+                                        <option value="Pasaporte">Pasaporte</option>
+                                        </select>
+
+                                        <div class="col">
+                                            <label>Fecha de nacimiento:</label>
+                                            <input class="input-date" type="date" name="fecha_nacimiento" id="date-nacimiento_enc_emp" placeholder="Fecha de nacimiento" required />
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col">
+                                        <input class="input-text margin" name="Segundo_nombre" placeholder="Segundo nombre (opcional)" id="txt-segundo_nombre_enc_emp" />
+                                        <input class="input-text margin" name="Segundo_apellido" placeholder="Segundo apellido(opcional)" id="txt-segundo_apellido_enc_emp" />
+                                        <input class="input-text margin" name="identificación" placeholder="Número de identificación" id="txt-identificacion_enc_emp" required/>
+                                        <input class="input-text margin" name="correo" placeholder="Correo electrónico" id="txt-correo" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <section>
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <label>Fecha de contratacion:</label>
+                                        <input class="input-date" type="date" name="fecha_contratacion" id="date_contratacion_enc_emp" required/>
+                                    </div>
+                                    <div class="col">
+                                        <input class="input-text margin" id="txt_puesto_enc_emp" name="puesto_empleado" placeholder="Puesto del empleado" type="text" required/>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <input class="input-text" id="txtContrasenna_enc_emp" placeholder="Contraseña" type="password" required>
+                                    </div>
+                                    <div class="col">
+                                        <input class="input-text" id="txtConfirmacion_enc_emp" placeholder="Verificar" type="password" required>
+                                    </div>
+                                </div>
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <select class="input-select" name="opcion" id="lst-parqueos" required>
+                                          <option value="#">El Higuerón</option>
+                                         </select>
+                                    </div>
+                                </div>
+                            </section>
+                        </form>
+                        <button class="btn orange" id="btn_registrar_enc_emp">Registrar</button>
+                    </section>
+
+                    <!-- Registrar empresas -->
+                    <section class="form-all-black dashboard">
+                        <h2>Registrar empresa</h2>
+
+                        <form id="rgt-empresas">
+                            <div class="form">
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <input class="input-text" name="nombre-empresa" placeholder="Nombre" id="txt-nombre-empresa" required/>
+                                        <section id="avatar-selection">
+                                            <div>
+                                                <span>Suba el logo:</span>
+
+                                                <!-- CLOUDINARY -->
+                                                <div class="input-container-foto foto">
+                                                    <div>
+                                                        <img id="user-photo" src="./img/download.jpg">
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" class="btn orange" id="btn-foto">Seleccionar</button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </section>
+                                    </div>
+
+
+                                    <div class="col">
+                                        <input class="input-text margin" name="razon-social" placeholder="Razón social" id="txt-razon-social" required/>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn1 orange" id="btn_registrar_empresa">Registrar</button>
+                    </section>
+                    </form>
+                    </section>
+
+                    <section class="listar-empresas-registradas-container">
+                        <h2>Empresas registradas</h2>
+
+
+                        <div class="input-container">
+                            <input class="input-finder" type="text" placeholder="buscar empresa" required />
+                        </div>
+                        <div class="topMarginSmall"></div>
+                        <br>
+                        <!-- Tabla Empresas registradas-->
+
+                        <div class="tbl-box">
+                            <table class="tbl-reporte">
+                                <!-- agregar thead -->
+                                <thead>
+                                    <tr>
+                                        <th>NOMBRE</th>
+                                        <th>RAZON SOCIAL</th>
+                                        <th>ESTADO</th>
+                                    </tr>
+
+                                </thead>
+                                <!-- agregar tbody borrar contenido -->
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="reportes-administrador">
+                        <h2 class="header-reportes"> Mis reportes
+                            <a href="admin-reportes.html" class="fas fa-arrow-circle-right greenIcon"></a>
+                        </h2>
+                        <h3> 1. Ingresos recibidos de todos los parqueos</h3>
+                        <h3> 2. Ingresos de un parqueo</h3>
+                        <h3> 3. Bitácora transaccional de usuarios</h3>
+
+                    </section>
+
+                </div>
+        </div>
+    </div>
+    <section id="ftr-avatar">
+        <img class="footer-avatar" src="./img/small-logo/parkit-white.png " />
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/services/shared-user.js"></script>
+    <script src="./js/controlador-profile-admin.js"></script>
+    <script src="./js/services/service-empresas.js"></script>
+    <script src="./js/services/service-parqueo.js"></script>
+    <script src="./js/services/service-registrar-enc-empresa.js"></script>
+
+    <!-- controlador del nav -->
+    <script src="./js/controlador-user-perfil.js"></script>
+    <!-- controlador de profile -->
+    <script src="./js/controlador-profiles.js"></script>
+    <!-- controlador con las actions de admin -->
+    <script src="./js/action-profile-admin.js"></script>
+</body>
+
+</html>

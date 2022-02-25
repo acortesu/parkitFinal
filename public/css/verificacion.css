@@ -1,0 +1,10 @@
+#verificacion .input-container,
+#res-contrasena .input-container {
+  width: 450px;
+  margin: 0 auto;
+}
+
+
+#verificacion .input-container input {
+  text-align: center;
+}

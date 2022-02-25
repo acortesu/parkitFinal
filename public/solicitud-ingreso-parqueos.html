@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Solicitud de Ingreso</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/daa42c8e16.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/solicitud-ingreso-parqueos.css" />
+</head>
+
+<body>
+    <!-- Navbar superior -->
+    <nav id="main-nav">
+        <div class="nav-content">
+            <a href="/index.html">
+                <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+                <a class="btn orange" id="btn-login" type="button">ya tengo una cuenta</a>
+        </div>
+    </nav>
+    <!-- Contenedor general -->
+    <main class="form-all-black" id="sign-in-parqueo">
+        <section>
+            <h2>Solicitud de ingreso</h2>
+            <h3>Información del parqueo</h3>
+        </section>
+        <section id="sct-promo-2">
+            <div class="two-colum">
+                <div class="col">
+                    <div class="input-container">
+                        <input class="input-text" placeholder="Nombre de sociedad o nombre completo del dueño(a) del parqueo" id="txt-nombre_dueno" required />
+                    </div>
+                    <select class="input-select tipo_ident" id="lst-nacionalidades" name="nacionalidad" required>
+                      <option value="" disabled selected hidden>Tipo de identificación</option>
+                      <option value="ced_nacional">Cédula nacional</option>
+                      <option value="ced-juridica">Cédula jurídica</option>
+                      <option value="pasaporte">Pasaporte</option>
+                      <option value="dimex">DIMEX</option>
+                    </select>
+                    <div class="input-container">
+                        <input class="input-text" id="txt-nombre_parqueo" placeholder="Nombre del parqueo" required />
+                    </div>
+
+                    <select class="input-select" name="opcion" id="lst-provincia" required>
+
+                      <option value="" disabled selected hidden>Provincia</option>
+                      <option value="San_Jose">San José</option>
+                      <option value="Cartago">Cartago</option>
+                      <option value="Heredia">Heredia</option>
+                      <option value="Alajuela">Alajuela</option>
+                      <option value="Puntarenas">Puntarenas</option>
+                      <option value="Limon">Limón</option>
+                      <option value="Guanacaste">Guanacaste</option>
+                    </select>
+
+                    <select class="input-select" name="canton" id="lst-canton" required>
+                      <option value="" disabled selected hidden>Cantón</option>
+                      <option value="canton">Cantón 1</option>
+                      <option value="canton">Cantón 2</option>
+                    </select>
+
+                    <select class="input-select distrito" name="Distrito" id="lst-distrito" required>
+                      <option value="" disabled selected hidden>Distrito</option>
+                      <option value="distrito">Distrito 1</option>
+                      <option value="distrito">Distrito 2</option>
+                    </select>
+
+                    <!-- Avatar -->
+                    <section id="avatar-selection">
+                        <div>
+                            <span>Adjunte el permiso de funcionamiento:</span>
+
+                            <!-- CLOUDINARY -->
+                            <div class="input-container-foto foto">
+                                <div>
+                                    <img id="user-photo" src="./img/folder.png" />
+                                </div>
+                                <div>
+                                    <button type="button" class="btn orange" id="btn-foto">
+                    Seleccionar
+                  </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col">
+                    <div class="input-container">
+                        <input class="input-text" placeholder="Correo electrónico" id="txt-email" required/>
+                    </div>
+                    <div class="input-container">
+                        <input class="input-text num_ident" placeholder="Número de identificación" id="txt-identificacion" required />
+                    </div>
+                    <div class="input-checkbox">
+                        <input type="checkbox" id="cbx-centro_comercial" />
+                        <label for="cbx-centro_comercial">¿El parqueo se encuentra en un centro comercial?</label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn orange btn1" id="btn-send">Enviar</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Modal Ingresar -->
+    <div id="modal-login" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-small">
+            <span id="close-modal-login" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Ingresar</h2>
+            <!-- inputs -->
+            <div class="modal-inputs-container">
+                <input class="input-text" placeholder="Correo electrónico" type="email" />
+                <input class="input-text" placeholder="Contraseña" type="password" />
+
+                <a class="forget-link" href="/restablecer-contrasena.html">Olvidé mi contraseña</a>
+
+                <button type="button" class="btn orange" id="btn-ingresar">
+        Enviar
+      </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/modals/login.js"></script>
+    <script src="./js/services/service-imagen.js"></script>    
+    <script src="./js/controlador-solicitud-ingreso-parqueos.js"></script>
+    <script src="./js/services/service-registro-solicitud-parqueos.js"></script>
+</body>
+
+</html>

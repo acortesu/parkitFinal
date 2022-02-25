@@ -1,0 +1,45 @@
+.user-cards {
+    margin-bottom: var(--margin-md);
+}
+
+.user-cards .cards-container {
+    display: flex;
+    position: relative;
+}
+
+.user-cards .cards-container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: var(--margin-md-smal);
+}
+
+.user-cards .cards-container input {
+    margin-bottom: 0;
+}
+
+.user-cards .cards-container .input-card {
+    width: 49%;
+}
+
+.profile-icons {
+    color: var(--clr-white);
+    font-size: var(--icon-regular);
+    width: 100%;
+    background-color: var(--clr-purple);
+    height: 25px;
+}
+
+.profile-icons-div {
+    margin-right: var(--margin-min);
+    float: right;
+}
+
+.mclogo {
+    background-color: white;
+}
+
+.arrow-icon {
+    color: var(--clr-green);
+}

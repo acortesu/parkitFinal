@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Profile Parqueo</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/dashboard-home.css" />
+    <link rel="stylesheet" href="css/one-parqueo.css" />
+    <link rel="stylesheet" href="css/perfil-parqueos.css" />
+</head>
+
+<body id="save">
+    <div id="page-container">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <!-- Name del active user -->
+                    <span id="nav-user-name"></span>
+                    <div class="round-img">
+                        <img id="nav-user-img" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a id="btn-editar-datos-empresa">Editar perfil</a></li>
+                        <li><a href="./index.html">Cerrar sesion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- side-nav -->
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="#" class="link active">Home</a>
+                <a href="/profile-normal-user.html" class="link">Mis reservas</a>
+            </div>
+        </nav>
+        <!-- side-nav -->
+        <div id="content-wrap">
+            <main id="dashboard">
+                <!-- header parqueos -->
+                <section class="banner-purple">
+                    <div class="container-banner-purple">
+                        <h1 class="tittle-banner" id="parqueo-nombre">
+                        </h1>
+                        <h2 class="tittle-banner2">PARQUEO PÚBLICO</h2>
+
+                        <div class="calificacion">
+                            <div class="star-orange">
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="fas fa-star"></span>
+                                <span class="far fa-star"></span>
+                            </div>
+
+                            <h3 class="review">1210 reviews</h3>
+
+                            <div class="horario">
+
+                                <div class="horario1">
+                                    <h3 class="dias">Lunes</h3>
+                                    <div class="flecha-horario1 flecha">
+                                        <span class="fas fa-caret-right"></span>
+                                    </div>
+                                    <h3 class="hora1"> 
+                                        <span id="lunes-apertura"></span> - <span id="lunes-cierre"></span>
+                                    </h3>
+                                </div>
+
+                                <div class="horario1">
+                                    <h3 class="dias">Martes</h3>
+                                    <div class="flecha-horario1 flecha">
+                                        <span class="fas fa-caret-right"></span>
+                                    </div>
+                                    <h3 class="hora1"> 
+                                        <span id="martes-apertura"></span> - <span id="martes-cierre"></span>
+                                    </h3>
+                                </div>
+
+                                <div class="horario1">
+                                    <h3 class="dias">Miercoles</h3>
+                                    <div class="flecha-horario1 flecha">
+                                        <span class="fas fa-caret-right"></span>
+                                    </div>
+                                    <h3 class="hora1"> 
+                                        <span id="miercoles-apertura"></span> - <span id="miercoles-cierre"></span>
+                                    </h3>
+                                </div>
+
+                                <div class="horario1">
+                                    <h3 class="dias">Jueves</h3>
+                                    <div class="flecha-horario1 flecha">
+                                        <span class="fas fa-caret-right"></span>
+                                    </div>
+                                    <h3 class="hora1"> 
+                                        <span id="jueves-apertura"></span> - <span id="jueves-cierre"></span>
+                                    </h3>
+                                </div>
+
+                                <div class="horario1">
+                                    <h3 class="dias">Viernes</h3>
+                                    <div class="flecha-horario1 flecha">
+                                        <span class="fas fa-caret-right"></span>
+                                    </div>
+                                    <h3 class="hora1"> 
+                                        <span id="viernes-apertura"></span> - <span id="viernes-cierre"></span>
+                                    </h3>
+                                </div>
+
+                                <div class="horario1">
+                                    <h3 class="dias">Sabado</h3>
+                                    <div class="flecha-horario1 flecha">
+                                        <span class="fas fa-caret-right"></span>
+                                    </div>
+                                    <h3 class="hora1"> 
+                                        <span id="sabado-apertura"></span> - <span id="sabado-cierre"></span>
+                                    </h3>
+                                </div>
+
+                                <div class="horario1">
+                                    <h3 class="dias">Domingo</h3>
+                                    <div class="flecha-horario1 flecha">
+                                        <span class="fas fa-caret-right"></span>
+                                    </div>
+                                    <h3 class="hora1"> 
+                                        <span id="domingo-apertura"></span> - <span id="domingo-cierre"></span>
+                                    </h3>
+                                </div>
+                                
+
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- imagenes de parqueos -->
+
+                <section class="carrusel-parks">
+                    <div class="img-parqueos">
+                        <div class="flechas-parqueos"></div>
+                        <div class="flecha-izquierda">
+                            <span class="fas fa-chevron-left"></span>
+                        </div>
+                        <div class="flecha-derecha">
+                            <span class="fas fa-chevron-right"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!--Map section -->
+
+                <div id="mapid"></div>
+
+                <!-- Register date/time section -->
+                <h2>
+                    RESERVE SU ESPACIO
+                </h2>
+                <section class="reserva-section" id="sct-reservas">
+                    <div class="dashboard-content">
+                        <h2>1. Seleccione su espacio</h2>
+                        <div class="espacio-container" id="espacios-reserva">
+
+
+                        </div>
+                        <h2>2. Seleccione el tiempo deseado, día y hora</h2>
+                        <div class="tiempo-container">
+                            <div class="tiempo-container-hora icons_bottom">
+                                <div class="tiempo-container-hora-txt">
+                                    <h3>0:30</h3>
+                                </div>
+                                <div class="icons-plus-minus">
+                                    <span class="fas fa-plus-square icon-orange"></span>
+                                    <span class="fas fa-minus-square icon-orange"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="tiempo-container-hora">
+                                <input class="input-text" id="date_reserva" type="date" name="fecha_reserva" placeholder="01/01/2020" required/>
+                            </div>
+                            <div class="tiempo-container-hora">
+                                <input class="input-text" id="time_reserva" type="time" name="hora_reserva" placeholder="1:00pm" required/>
+                            </div>
+
+                        </div>
+                        <button class="btn orange btn-margin" id="btn-reservar">Reservar</button>
+                    </div>
+                </section>
+
+                <div class="logo-image">
+                    <img class="footer-logo" src="./img/small-logo/parkit-white.png " /></div>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Referencia Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Referencia script Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/controlador-profile-parqueos.js"></script>
+    <script src="./js/services/shared-user.js"></script>
+    <script src="./js/services/service-parqueo.js"></script>
+
+    <!-- controlador del nav -->
+    <script src="./js/controlador-user-perfil.js"></script>
+    <!-- controlador con las actions de admin -->
+    <script src="./js/action-profile-empresa.js"></script>
+</body>
+
+</html>

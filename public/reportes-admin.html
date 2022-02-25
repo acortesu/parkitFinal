@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Landing Page</title>
+    <!-- Link de FontAwesome -->
+    <script
+      src="https://kit.fontawesome.com/d363d1b466.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Referencia del font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Referencia estilos leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/reportes-admin.css" />
+  </head>
+
+  <body id="save2">
+    <div id="page-container">
+      <!-- Navbar superior -->
+      <nav id="main-nav" class="in-dashboard">
+        <div class="nav-content">
+            <div class="active-user">
+                <span>Erick</span>
+                <div class="round-img">
+                  <img src="./img/erick.jpg" alt="" />
+                </div>
+              </div>
+        </div>
+      </nav>
+      <nav id="side-nav">
+        <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+        <div class="nav-content">
+            <a href="/homeapp-admin.html" class="link">Home</a>
+            <a href="/profile-admin.html" class="link">Mantenimientos</a>
+            <a href="#" class="link">Parqueos</a>
+            <a href="#" class="link">Registros</a>
+            <a href="#" class="link active">Reportes</a>
+        </div>
+      </nav>
+      <div id="content-wrap">
+        <main id="dashboard">
+          <!-- Profile section -->
+          <section class="profile">
+            <div class="profile-container">
+                <div class="img-container">
+                    <img src="./img/erick.jpg" alt="" />
+                </div>
+
+                <div class="info-personal">
+                    <h2>Erick Gonzales Gomez</h2>
+                    <p>2-0438-0589</p>
+                    <p>earengg@gmail.com</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-content">
+            <section class="user-reports">
+                <h2>Mis reportes</h2>
+
+                <div class="report-container">
+                    <div class="subheader-text">
+                        <span>1. Ingresos recibidos de todos los parqueos</span>
+                    </div>
+                    <div class="generar-container">
+                        <div class="input-container fecha">
+                            <p>DESDE</p>
+                            <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                        </div>
+
+                        <div class="input-container fecha">
+                            <p>HASTA</p>
+                            <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                        </div>
+
+                        <button class="btn orange gen input-cont">Generar</button>
+                    </div>
+
+                    <div class="report-result">
+                        <p>Los ingresos totales de todos los parqueos fue:</p> <span id="reporte1-total">₡12.300.000</span>
+                    </div>
+
+                    <div class="input-container descargar">
+                        <p>Descargar reporte</p>
+                        <i class="fas fa-file-pdf"></i>
+                        <a href="" download=""></a>
+                    </div>
+                </div>
+
+                <div class="report-container">
+                    <div class="subheader-text">
+                        <span>2. Ingresos de un parqueo</span>
+                    </div>
+
+                    <div class="generar-container">
+                        <div class="input-container">
+                            <input class="input-text" placeholder="Nombre del parqueo" required />
+                        </div>
+
+                        <div class="input-container fecha">
+                            <p>DESDE</p>
+                            <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                        </div>
+
+                        <div class="input-container fecha">
+                            <p>HASTA</p>
+                            <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                        </div>
+                        <button class="btn orange input-cont">Generar</button>
+                    </div>
+
+                    <div class="report-result">
+                        <p>Los ingresos totales del parqueo fue:</p> <span id="reporte1-total">₡253.000</span>
+                    </div>
+
+                    <div class="input-container descargar">
+                        <p>Descargar reporte</p>
+                        <i class="fas fa-file-pdf"></i>
+                        <a href="" download=""></a>
+                    </div>
+                </div>
+
+                <div class="report-container">
+                    <div class="subheader-text"> <span>3. Bitácora transaccional de usuarios</span></div>
+
+                    <div class="generar-container">
+                        <div class="input-container">
+                            <select class="input-select reporte-datos" name="datos" required>
+                            <option value="datos" disabled selected hidden>ACCIÓN</option>
+                            <option value="datos">Datos modificados</option>
+                            <option value="datos">Datos eliminados</option>
+                            <option value="datos">Datos activados</option>
+                            <option value="datos">Datos desactivados</option>
+                          </select>
+                        </div>
+
+                        <div class="input-container fecha">
+                            <p>DESDE</p>
+                            <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                        </div>
+
+                        <div class="input-container fecha">
+                            <p>HASTA</p>
+                            <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                        </div>
+
+                        <button class="btn orange input-cont">Generar</button>
+
+                    </div>
+
+                    <div class="tbl-box">
+                        <table class="tbl-reporte">
+                            <tr>
+                                <th>Nombre del usuario</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Acción</th>
+                            </tr>
+                            <tr>
+                                <td>Ricardo Loría</td>
+                                <td>13/07/2020</td>
+                                <td>12:30 pm</td>
+                                <td>Eliminar</td>
+                            </tr>
+                            <tr>
+                                <td>María José Corrales Mora</td>
+                                <td>15/07/2020</td>
+                                <td>5:00 pm</td>
+                                <td>Eliminar</td>
+                            </tr>
+                            <tr>
+                                <td>Fernando Contreras</td>
+                                <td>12/07/2020</td>
+                                <td>3:00 pm</td>
+                                <td>Eliminar</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="input-container descargar">
+                        <p>Descargar reporte</p>
+                        <i class="fas fa-file-pdf"></i>
+                        <a href="" download=""></a>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <!-- <script src="./js/controlador-profile-normal-user.js"></script> -->
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/modals/registro-tarjeta.js"></script>
+  </body>
+</html>

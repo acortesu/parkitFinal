@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Verificacion</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+
+    <!--  Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/verificacion.css" />
+</head>
+
+<body>
+    <!-- Navbar superior -->
+    <nav id="main-nav">
+        <div class="nav-content">
+            <a href="/index.html">
+                <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            </a>
+        </div>
+    </nav>
+    <!-- Contenedor general -->
+    <main class="all-black" id="res-contrasena">
+        <h2>Restablecer <br> la contraseña</h2>
+        <div class="input-container">
+            <div>
+                <input class="input-text" name="contraseña" placeholder="Contraseña" type="password" id="txtContrasena" required/>
+            </div>
+            <div>
+                <input class="input-text margin" name="repetir_contraseña" placeholder="Verificar contraseña" type="password" id="txtConfirmacion" required/>
+            </div>
+        </div>
+        <button class="btn orange" id="btn-send">Enviar</button>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="/js/controlador-restablecer-contrasena.js"></script>
+
+</body>
+
+</html>

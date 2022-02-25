@@ -1,0 +1,84 @@
+#modal-modificar_datos_empleados .tbl-box {
+    background: linear-gradient(180deg, #17181B 0%, rgba(23, 24, 27, 0) 100%);
+    color: var(--clr-white);
+    width: 100%;
+}
+
+#modal-modificar_datos_empleados .col1 {
+    margin: 0 1% 0 0;
+}
+
+#modal-modificar_datos_empleados .col2 {
+    margin: 0 0 0 1%;
+}
+
+#modal-modificar_datos_empleados .modal-content h3 {
+    font: var(--typo-subheader);
+    color: var(--clr-white);
+    margin-bottom: var(--margin-md-smal);
+    margin-left: 10%;
+}
+
+#modal-modificar_datos_empleados .input-container {
+    margin-bottom: var(--margin-small);
+}
+
+#modal-modificar_datos_empleados .input-container p {
+    color: var(--clr-white);
+    font: var(--typo-global);
+    margin-right: var(--margin-md-smal);
+}
+
+#avatar-selection p {
+    color: var(--clr-white);
+}
+
+#modal-modificar_datos_empleados .nacimiento,
+#modal-modificar_datos_empleados .contratacion,
+#modal-modificar_datos_empleados .foto {
+    display: flex;
+    justify-content: left;
+    align-items: baseline;
+}
+
+#modal-modificar_datos_empleados .nacimiento,
+#modal-modificar_datos_empleados .contratacion {
+    margin-top: var(--margin-small);
+}
+
+#modal-modificar_datos_empleados .primero {
+    margin-right: var(--margin-md-smal);
+    margin-bottom: var(--margin-md);
+}
+
+#modal-modificar_datos_empleados .fecha {
+    width: 50%;
+}
+
+#btn-pagar {
+    margin-bottom: var(--margin-md-smal);
+}
+
+#ftr-avatar {
+    text-align: center;
+}
+
+#modal-modificar_datos_empleados .footer-avatar {
+    width: 204px;
+    height: 188px;
+}
+
+#avatar-selection .avatars-container {
+    display: flex;
+    margin-bottom: var(--margin-md-smal);
+}
+
+#modal-modificar_datos_empleados .avatar-log {
+    height: 70px;
+    /* width: 70px; */
+}
+
+#modal-modificar_datos_empleados .picture_image {
+    color: var(--clr-naranja);
+    margin: var(--margin-min) 0 var(--margin-md) var(--margin-min);
+}

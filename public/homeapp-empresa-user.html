@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Landing Page</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/dashboard-home.css" />
+    <link rel="stylesheet" href="css/one-parqueo.css" />
+</head>
+
+<body>
+    <div id="page-container">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <span>Erick</span>
+                    <div class="round-img">
+                        <img src="./img/erick.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Editar perfil</a></li>
+                        <li><a href="/index.html">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="#" class="link active">Home</a>
+                <a href="#" class="link">Mis reservas</a>
+                <a href="#" class="link">Mis convenios</a>
+                <a href="#" class="link">Mis pagos</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+                <div id="mapid"></div>
+
+                <div class="dashboard-content">
+                    <div class="sct-finder">
+                        <div class="input-container">
+                            <input class="input-finder" type="text" placeholder="buscar estacionamiento" required />
+                        </div>
+                        <div class="ctn-filtrar">
+                            <span class="fas fa-list-alt"> </span>
+                            <p>Filtrar por ubicación</p>
+                        </div>
+                    </div>
+                    <section id="result">
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo1.jpg')"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo La Cali
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1200</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$2,06</p>
+                                            <p>€1,74</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Calle 23, La California, San José</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>1500 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>3</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>20</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>15</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo2.jpg')"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo Las Brizas
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1100</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1,89</p>
+                                            <p>€1,60</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Av 2A, Soledad, San José</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>623 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>2</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>10</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>8</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo3.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo Central
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1000</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1.50</p>
+                                            <p>€2.10</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Calle de la Sabana, San José</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star-half-alt"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>1210 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>5</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>17</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>10</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>12</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo4.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo La Luz
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1100</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1,89</p>
+                                            <p>€1,60</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>El Valle, San José, Tibás</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star-half-alt"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>2300 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>8</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>35</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>15</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo5.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo Alajuelita
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡850</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1,46</p>
+                                            <p>€1,23</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>110, San José Province, Alajuelita</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>364 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>2</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>11</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>5</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo6.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo Monteazul
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1100</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1,89</p>
+                                            <p>€1,60</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Av 2A, Soledad, San José</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>600 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>4</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>26</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>10</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>5</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo7.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo Monterrey
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1100</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1,89</p>
+                                            <p>€1,60</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Sagrada Familia, San José</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star-half-alt"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>1310 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>5</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>17</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>10</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>12</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo8.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo del Sur
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡850</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1,46</p>
+                                            <p>€1,23</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Av 26, Cuba, San José</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>190 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>3</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>19</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>7</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>4</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo9.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo Los Robles
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1200</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$2,06</p>
+                                            <p>€1,74</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Guachipelin, San José, San Rafael</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>1500 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>8</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>35</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>10</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo10.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo La Chispa
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1100</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1,89</p>
+                                            <p>€1,60</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>310, San José, Pozos</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>840 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>2</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>16</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>8</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo11.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo El Garaje
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1000</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$1.50</p>
+                                            <p>€2.10</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Calle de la Sabana, San José</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star-half-alt"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>1600 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>5</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>20</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>10</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>12</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="park-card">
+                            <div class="two-colum park-card-container">
+                                <div class="col-photo" style="background-image: url('./img/Parqueos/Parqueo12.jpg"></div>
+                                <div class="col-info">
+                                    <div class="titular">
+                                        <h2>
+                                            Parqueo Lindora
+                                        </h2>
+                                    </div>
+                                    <div class="precios">
+                                        <div class="colones">
+                                            <p>‎₡1300</p>
+                                        </div>
+                                        <div class="dol-euro">
+                                            <p>$2,23</p>
+                                            <p>€1,89</p>
+                                        </div>
+                                    </div>
+                                    <div class="direccion">
+                                        <span class="fas fa-map-marker-alt"></span>
+                                        <p>Valle del Sol Santa Ana, San José, Pozos</p>
+                                    </div>
+
+                                    <div class="registrar">
+                                        <button class="btn orange">reservar</button>
+                                    </div>
+
+                                    <div class="sct-reviews">
+                                        <div class="stars">
+                                            <span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star"></span
+                        ><span class="fas fa-star star-half"></span>
+                                        </div>
+                                        <div class="reviews">
+                                            <p>1463 reviews</p>
+                                        </div>
+                                    </div>
+                                    <div class="vehiculos">
+                                        <div class="ley">
+                                            <span class="fas fa-wheelchair"></span>
+                                        </div>
+                                        <p>10</p>
+                                        <div class="car">
+                                            <span class="fas fa-car"></span>
+                                        </div>
+                                        <p>40</p>
+                                        <div class="motorcycle">
+                                            <span class="fas fa-motorcycle"></span>
+                                        </div>
+                                        <p>15</p>
+                                        <div class="bike">
+                                            <span class="fas fa-bicycle"></span>
+                                        </div>
+                                        <p>10</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Contenedor general -->
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Referencia script leaflet -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="./js/map.js"></script>
+</body>
+
+</html>

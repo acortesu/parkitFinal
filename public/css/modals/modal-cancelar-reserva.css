@@ -1,0 +1,9 @@
+#modal-cancelacion-reserva .btn-cancelacion {
+    display: flex;
+    justify-content: center;
+}
+
+#modal-cancelacion-reserva button {
+    width: 150px;
+    margin-left: var(--margin-md)
+}

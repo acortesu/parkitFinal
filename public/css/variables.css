@@ -1,0 +1,46 @@
+/* --- VARIABLES ---  */
+
+:root {
+    /* COLORES */
+    --clr-naranja: #ff5000;
+    --clr-purple: #7500ff;
+    --clr-black: #000000;
+    --clr-white: #ffffff;
+    --clr-blue: #0b2efb;
+    --clr-green: #1bb366;
+    --clr-dark-grey: #17181b;
+    --clr-shadow-modal: rgba(0, 0, 0, 0.7);
+    /* SHADOW COLORS */
+    --clr-purple-gradiant: linear-gradient(180deg, var(--clr-purple) 0%, rgba(117, 0, 255, 0) 100%);
+    --clr-black-gradiant: linear-gradient(180deg, #17181B 0%, rgba(23, 24, 27, 0) 100%);
+    /* TYPOS */
+    --typo-button: bold 14px "Open Sans";
+    --typo-banner-title: bold 130px "Open Sans";
+    --typo-banner-title-reg: 100px "Open Sans";
+    --typo-global: 300 14px "Open Sans";
+    --typo-main-title: bold 64px "PT Serif";
+    --typo-footer: 300 14px "Open Sans";
+    --typo-input: italic 300 14px "Open Sans";
+    --typo-input-new: 300 14px "Open Sans";
+    --typo-header: bold 54px "PT Serif";
+    --typo-header-open: bold 54px "Open Sans";
+    --typo-subheader: bold 26px "Open Sans";
+    --typo-title-pt: bold 36px "PT Serif";
+    --typo-header-text: bold 18px "Open Sans";
+    --typo-side-link: 18px "Open Sans";
+    --typo-min: 10px "Open Sans";
+    --typo-name: 18px "Open Sans";
+    --typo-name-bold: bold 18px "Open Sans";
+    --typo-hour: bold 85px "PT Serif";
+    --typo-max-number: bold 260px "PT Serif";
+    --typo-ampm: bold 72px "PT Serif";
+    /* ICONS */
+    --icon-regular: 18px;
+    --icon-min: 10px;
+    /* MARGIN */
+    --margin-min: 10px;
+    --margin-small: 15px;
+    --margin-md-smal: 30px;
+    --margin-md: 60px;
+    --margin-big: 120px;
+}

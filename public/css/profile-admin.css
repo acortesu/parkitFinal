@@ -1,0 +1,55 @@
+#save1 .black-container {
+    display: flex;
+    justify-content: space-between;
+    height: 460px;
+    margin: 1%;
+}
+
+#save1 .form-IFAM-container,
+.form-parkit-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#save1 .fst-cont {
+    margin-top: var(--margin-md-smal);
+}
+
+#save1 .ipt-container {
+    margin-bottom: var(--margin-small);
+}
+
+#save1 .input-text {
+    background-color: var(--clr-black);
+    margin-bottom: 0px;
+}
+
+#save1 .redes-IFAM,
+.tel-mail-container,
+.cambio-container {
+    display: flex;
+    align-items: center;
+}
+
+#save1 .redes-IFAM {
+    margin-bottom: var(--margin-small);
+}
+
+#save1 .redes-IFAM .fas,
+.fab {
+    color: var(--clr-white);
+    font-size: 22px;
+    margin-right: var(--margin-min);
+}
+
+#save1 .lst-ctn {
+    margin-bottom: var(--margin-md);
+}
+
+#save1 .btn {
+    width: 130px;
+}
+
+#save1

@@ -1,0 +1,332 @@
+/* ESTILOS GENERALES */
+
+#save {
+    color: var(--clr-white);
+}
+
+#save .espacio-container {
+    margin-bottom: var(--margin-big);
+}
+
+
+/* HEADER PARQUEO */
+
+#save .tittle-banner {
+    font: var(--typo-hour);
+    color: var(--clr-white);
+    line-height: 80%;
+    padding-top: var(--margin-md);
+}
+
+#save .banner-purple {
+    background: linear-gradient(180deg, #1bb366 0%, rgba(27, 179, 102, 0) 100%);
+}
+
+#save .star-orange {
+    color: var(--clr-naranja);
+}
+
+#save .tittle-banner2 {
+    font: var(--typo-subheader);
+    color: var(--clr-white);
+    margin-top: var(--margin-min);
+    margin-left: 0;
+}
+
+#save .far {
+    color: var(--clr-white);
+}
+
+#save .calificacion {
+    margin-top: var(--margin-md-smal);
+    display: flex;
+    padding-bottom: var(--margin-big);
+}
+
+#save .review {
+    color: var(--clr-white);
+    font: var(--typo-input);
+    margin-left: 10px;
+}
+
+#save .container-banner-purple {
+    margin-left: 150px;
+}
+
+#save .horario {
+    margin-left: 680px;
+    position: absolute;
+    top: 7%;
+    bottom: 70.54%;
+}
+
+#save .dias {
+    font: var(--typo-global);
+    color: var(--clr-white);
+}
+
+#save .hora1 {
+    font: var(--typo-button);
+    color: var(--clr-white);
+    margin-left: 16px;
+}
+
+#save .hora2 {
+    font: var(--typo-button);
+    color: var(--clr-white);
+    margin-left: 15px;
+}
+
+#save .hora3 {
+    font: var(--typo-button);
+    color: var(--clr-white);
+    margin-left: 16px;
+}
+
+#save .flecha {
+    color: var(--clr-black);
+    font: var(--typo-side-link);
+}
+
+#save .flecha-horario1 {
+    margin-left: 20px;
+}
+
+#save .flecha-horario2 {
+    margin-left: 6px;
+}
+
+#save .flecha-horario3 {
+    margin-left: 56px;
+}
+
+#save .horario1 {
+    display: flex;
+}
+
+
+/* ESTILOS DEL CARROUSEL */
+
+#save .carrusel-parks {
+    background-color: var(--clr-shadow-modal);
+    width: 100%;
+    height: 400px;
+    justify-content: center;
+    display: flex;
+}
+
+#save .img-parqueos {
+    background-image: url(../img/landing/promo_2.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#save .flecha-izquierda {
+    position: absolute;
+    width: 35px;
+    height: 71px;
+    top: 48%;
+    left: 0;
+    font-size: 54px;
+}
+
+#save .flecha-derecha {
+    position: absolute;
+    width: 35px;
+    height: 71px;
+    top: 48%;
+    right: 0;
+    font-size: 54px;
+}
+
+
+/* ESTILOS DEL MAPA */
+
+#mapid {
+    margin-top: 70px;
+}
+
+
+/* ESTILOS GENERALES RESERVA */
+
+#save .reserva-section {
+    padding-top: var(--margin-small);
+    background: var(--clr-black-gradiant);
+    margin-bottom: var(--margin-big);
+}
+
+#save h2 {
+    font: var(--typo-header-open);
+    margin-bottom: var(--margin-md);
+    margin-left: var(--margin-md-smal);
+}
+
+
+/* ESTILOS ESPACIO */
+
+#save .two-cols {
+    display: flex;
+}
+
+#save .col-izq {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 170px;
+}
+
+#save .col-der {
+    display: flex;
+}
+
+#save .dashboard-content h2 {
+    color: var(--clr-white);
+    font: var(--typo-subheader);
+    margin-top: var(--margin-md-smal);
+    margin-bottom: var(--margin-md-smal);
+}
+
+#save .container-ley,
+.container-carros,
+.container-motos,
+.container-bicis {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: var(--margin-min);
+}
+
+#save .precio-colones p {
+    font: var(--typo-subheader);
+    margin-left: var(--margin-min);
+}
+
+#save .precio-dolares-euros p {
+    display: flex;
+    flex-direction: column;
+    font: var(--typo-min);
+    margin-left: var(--margin-min);
+}
+
+#save .texto_horas p {
+    font: var(--typo-min);
+    margin-left: var(--margin-min);
+}
+
+#save .icono-vehiculo {
+    width: 40px;
+    height: 40px;
+    background-color: var(--clr-black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: var(--margin-md-smal);
+}
+
+#save .icon-orange {
+    color: var(--clr-naranja);
+    font-size: 20px;
+}
+
+#save .ps {
+    height: 20px;
+    width: 20px;
+    background-color: var(--clr-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: var(--typo-min);
+    margin: 3px;
+}
+
+#save .cuadro-orange {
+    background-color: var(--clr-naranja);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: var(--margin-min);
+}
+
+#save .ps.selected {
+    background-color: var(--clr-green);
+}
+
+#save .ps.occupied {
+    background-color: #666;
+    color: var(--clr-black);
+}
+
+#save .ps:not(.occupied):hover {
+    cursor: pointer;
+    background-color: var(--clr-green);
+    color: var(--clr-black);
+}
+
+
+/* ESTILOS TIEMPO */
+
+#save .tiempo-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+#save .tiempo-container-hora {
+    width: 60%;
+}
+
+#save .icons_bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+#save .tiempo-container-hora-txt h3 {
+    font: var(--typo-banner-title-reg);
+    display: flex;
+    align-items: flex-end;
+}
+
+#save .tiempo-container-hora {
+    margin-right: 5%;
+}
+
+#save .icons-plus-minus {
+    margin-right: 5%;
+    display: flex;
+}
+
+#save .icons-plus-minus span {
+    margin-right: var(--margin-min);
+    display: flex;
+    font-size: 18px;
+}
+
+#save .tiempo-container-hora:last-child {
+    margin-right: 0;
+}
+
+#save .input-text {
+    margin: 0;
+}
+
+#save .btn-margin {
+    margin-top: var(--margin-md);
+}
+
+
+/* ESTILOS FOOTER */
+
+#save .logo-image {
+    width: 100%;
+    text-align: center;
+}
+
+#save .footer-logo {
+    width: 204px;
+    height: 188px;
+    align-items: center;
+}

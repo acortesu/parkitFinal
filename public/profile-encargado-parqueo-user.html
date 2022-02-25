@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Landing Page</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/solicitud-ingreso-parqueos.css" />
+    <link rel="stylesheet" href="css/profile-encargado-parqueo-user.css" />
+    <link rel="stylesheet" href="css/modals/modal-modificar_convenio.css">
+    <link rel="stylesheet" href="css/modals/modal-modifcardatos-userfinal-admin.css">
+</head>
+
+<body>
+    <div id="page-container">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <span>Brayan</span>
+                    <div class="round-img">
+                        <img src="./img/brayan.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="/homeapp-encargado-parqueo.html" class="link">Home</a>
+                <a href="#" class="link active">Agregar convenio</a>
+                <a href="#" class="link">Mis convenios</a>
+                <a href="#" class="link">Tarifas y espacios</a>
+                <a href="#" class="link">Reportes</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+                <section class="profile">
+                    <div class="profile-container">
+                        <div class="img-container">
+                            <img src="./img/brayan.jpg" alt="" />
+                        </div>
+
+                        <div class="info-personal">
+                            <h2>Brayan Gonzales</h2>
+                            <h3 class="nombre-parqueo">Encargado del Parqueo La Flor</h3>
+                            <p>1-1101-0475</p>
+                            <p>frodriguez@gmail.com</p>
+                        </div>
+                        <div class="edit-profile">
+                            <div class="far fa-edit link" id="btn-modificar-datos-user"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-content" id="sct-enc-parqueo">
+                    <!-- Info registrar convenios -->
+                    <section class="user-convenios form-all-black dashboard">
+                        <h2>Registrar convenios</h2>
+
+                        <div class="two-colum">
+                            <div class="col">
+                                <select class="input-select tipo_ident" id="lst-empresas" name="empresas" required>
+                                    <option value="" disabled selected hidden>Vincular a empresa</option>
+                                    <option value="empresa">McDonald's</option>
+                                    <option value="empresa">Ministerio de Hacienda</option>
+                                    <option value="empresa">AsoTribu</option>
+                                    <option value="empresa">HP</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="two-colum">
+                            <div class="col">
+                                <div class="input-container">
+                                    <input class="input-text margin" type="text" name="Nombre-Convenio" placeholder="Nombre del convenio" id="txt-nombre-convenio" required/>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="radio-estado" id="rdo-activo">
+                                    <p>Estado del convenio:</p>
+
+                                    <label class="container-radio">Activo
+                                  <input type="radio" checked="checked" value="activo" name="radio" required>
+                                  <span class="checkmark"></span>
+                                </label>
+
+                                    <label class="container-radio">Desactivo
+                                  <input type="radio" value="desactivo" name="radio" required>
+                                  <span class="checkmark"></span>
+                                </label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="two-colum margin">
+                                <div class="">
+                                    <div class="inline-input">
+                                        <label>Cantidad de espacios totales:</label>
+                                        <input class="input-text width" id="num-espacios-totales" type="number" name="Cantidad_espacios" placeholder="0" required/>
+                                    </div>
+
+                                </div>
+
+                                <div class="">
+                                    <div class="inline-input">
+                                        <label>Fecha de creación:</label>
+                                        <input class="input-text width" id="date-creacion" type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+
+                            </div>
+                        </div>
+                        <!--Descuentos y cantidad de espacios -->
+                        <div class="cantidad-espacios descuentos">
+                            <label>Descuentos y cantidad de espacios:</label>
+
+                            <div class="two-colum">
+                                <div class="input-descuentos-convenios">
+                                    <div class="option-descuento">
+                                        <span class="fas fa-wheelchair icon"></span>
+
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-descuentos-discapacitados" type="number" name="descuentos" placeholder="Descuento" />
+                                        </div>
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-espacios-discapacitados" type="number" name="cantidad_espacios" placeholder="Espacio">
+                                        </div>
+                                    </div>
+                                    <div class="option-descuento">
+                                        <span class="fas fa-car icon "></span>
+
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-descuentos-carro" type="number" name="descuentos" placeholder="Descuento" />
+                                        </div>
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-espacios-carro" type="number" name="cantidad_espacios" placeholder="Espacios">
+                                        </div>
+                                    </div>
+                                    <div class="option-descuento ">
+                                        <span class="fas fa-motorcycle icon "></span>
+
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-descuentos-moto" type="number" name="descuentos" placeholder="Descuento" />
+                                        </div>
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-espacios-moto" type="number" name="cantidad_espacios" placeholder="Espacios">
+                                        </div>
+                                    </div>
+                                    <div class="option-descuento ">
+                                        <span class="fas fa-bicycle icon"></span>
+
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-descuentos-bici" type="number" name="descuentos" placeholder="Descuento" />
+                                        </div>
+                                        <div class="inline-input">
+                                            <input class="input-select margin" id="num-espacios-bici" type="number" name="cantidad_espacios" placeholder="Espacios">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn orange" id="btn-registrar-convenio">Registrar</button>
+                    </section>
+
+                    <section>
+                        <h2>Convenios realizados</h2>
+                        <input class="input-finder" id="btn-buscar-convenio" type="text " placeholder="buscar convenio " required />
+                        <div class="tbl-box ">
+                            <table class="tbl-reporte ">
+                                <tr>
+                                    <th>NOMBRE</th>
+                                    <th>CANTIDAD DE ESPACIOS</th>
+                                    <th>FECHA DE CREACION</th>
+                                    <th>ESTADO</th>
+                                </tr>
+                                <tr>
+                                    <td>McDonald’s</td>
+                                    <td>9</td>
+                                    <td>1/8/2020</td>
+                                    <td class="ctn-two-inputs">
+                                        <div>
+                                            Activo
+                                        </div>
+                                        <span class="edit-convenio fas fa-arrow-circle-right" id="btn-go-modificar-convenio"></span>
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>Quiznos</td>
+                                    <td>7</td>
+                                    <td>7/2/2020</td>
+                                    <td class="ctn-two-inputs">
+                                        <div>
+                                            Activo
+                                        </div>
+                                        <span class="edit-convenio fas fa-arrow-circle-right" id="btn-go-modificar-convenio"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sykes</td>
+                                    <td>16</td>
+                                    <td>8/1/2020</td>
+                                    <td class="ctn-two-inputs">
+                                        <div>
+                                            Activo
+                                        </div>
+                                        <span class="edit-convenio fas fa-arrow-circle-right" id="btn-go-modificar-convenio"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Amazon</td>
+                                    <td>16</td>
+                                    <td>8/1/2020</td>
+                                    <td class="ctn-two-inputs">
+                                        <div>
+                                            Activo
+                                        </div>
+                                        <span class="edit-convenio fas fa-arrow-circle-right" id="btn-go-modificar-convenio"></span>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+
+                    </section>
+
+                    <section id="sct-tarifas-espacios">
+                        <div class="titulo-tarifas-espacios">
+                            <h2>Mis tarifas y espacios</h2>
+                            <div class="edit-park">
+                                <span class="far fa-edit" id="btn-modificar-espacios-tarifas"></span>
+                            </div>
+                        </div>
+
+                        <div class="tbl-box-gradient">
+                            <table class="tbl-tarifa-gradient ">
+                                <tr>
+                                    <td rowspan="2">
+                                        <span class="fas fa-wheelchair circleIcon "></span>
+                                    </td>
+                                    <td rowspan="2">
+                                        <input class="num-input" id="num-espacios-discapacitados" type="number" placeholder="0">
+                                        <span class="inline"> espacios </span>
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <input class="num-input" id="num-tarifa-discapacitados" type="number" placeholder="0">
+                                        <span class="inline"> colones </span>
+
+                                    </td>
+                                    <td class="preciosTop ">
+                                        €3.50
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                                    </td>
+                                    <tr>
+                                        <td class="preciosBottom ">
+                                            $2.10
+                                        </td>
+                                    </tr>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="2 ">
+                                        <span class="fas fa-car circleIcon "></span>
+                                    </td>
+                                    <td rowspan="2">
+                                        <input class="num-input" id="num-espacios-carros" type="number" placeholder="0">
+                                        <span class="inline"> espacios </span>
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <input class="num-input" id="num-tarifa-carros" type="number" placeholder="0">
+                                        <span class="inline"> colones </span>
+
+                                    </td>
+                                    <td class="preciosTop ">
+                                        €3.50
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                                    </td>
+                                    <tr>
+                                        <td class="preciosBottom ">
+                                            $2.10
+                                        </td>
+                                    </tr>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="2 ">
+                                        <span class="fas fa-motorcycle circleIcon "></span>
+                                    </td>
+                                    <td rowspan="2">
+                                        <input class="num-input" id="num-espacios-motos" type="number" placeholder="0">
+                                        <span class="inline"> espacios </span>
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <input class="num-input" id="num-tarifa-motos" type="number" placeholder="0">
+                                        <span class="inline"> colones </span>
+                                    </td>
+                                    <td class="preciosTop ">
+                                        €0
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                                    </td>
+                                    <tr>
+                                        <td class="preciosBottom ">
+                                            $0
+                                        </td>
+                                    </tr>
+                                </tr>
+
+                                <tr>
+                                    <td rowspan="2 ">
+                                        <span class="fas fa-bicycle circleIcon"></span>
+                                    </td>
+                                    <td rowspan="2">
+                                        <input class="num-input" id="num-espacios-bicis" type="number" placeholder="0">
+                                        <span class="inline"> espacios </span>
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <input class="num-input" id="num-tarifa-bicis" type="number" placeholder="0">
+                                        <span class="inline"> colones </span>
+                                    </td>
+                                    <td class="preciosTop ">
+                                        €3.00
+                                    </td>
+                                    <td rowspan="2 ">
+                                        <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                                    </td>
+                                    <tr>
+                                        <td class="preciosBottom">
+                                            $1.70
+                                        </td>
+                                    </tr>
+                                </tr>
+                            </table>
+                            <button class="btn orange" id="btn-registrar-esp_tar">Registrar</button>
+                        </div>
+                    </section>
+                    <!-- Modificar datos del parqueo -->
+                    <div class="edit-datos-parqueo" id="">
+                        <div class="modificar-datos ">
+                            <h2 class="tittle1-edit-park">Modificar datos del parqueo</h2>
+                            <div class="edit-park ">
+                                <a href="/modificar-datos-parqueo.html" class="far fa-edit"></a>
+                            </div>
+                        </div>
+                        <h2 class="tittle2-edit-park ">Mis reportes</h2>
+                        <div class="reportes ">
+                            <div class="cnt-rep">
+                                <h3>1. Ingresos recibidos</h3>
+                                <a href="/encargado-parqueos-reportes.html" class="fas fa-arrow-circle-right whiteIcon link"></a>
+                            </div>
+                            <div class="cnt-rep">
+                                <h3>2. Ingresos de un cliente</h3>
+                                <a href="/encargado-parqueos-reportes.html" class="fas fa-arrow-circle-right whiteIcon link"></a>
+                            </div>
+                            <div class="cnt-rep">
+                                <h3>3. Historial de ingresos de un cliente</h3>
+                                <a href="/encargado-parqueos-reportes.html" class="fas fa-arrow-circle-right whiteIcon link"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Logo avatar -->
+    <section id="ftr-avatar">
+        <img class="footer-avatar center" src="./img/small-logo/parkit-white.png " />
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="left ">
+            <img class="ifam-log " src="./img/ifam_logo.png " alt="logo ifam " />
+            <p>www.ifam.go.cr</p>
+            <div class="social ">
+                <span class="fab fa-facebook-square "></span>
+                <span class="fab fa-instagram "></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt ">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Modal modificar datos convenios -->
+    <div id="modal-modificar-convenios" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-modificar_convenio" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Modificar convenios</h2>
+
+            <!-- inputs -->
+            <div class="dashboard-content">
+                <section class="user-convenios form-all-black dashboard">
+                    <h2>Modificar convenios</h2>
+
+                    <div class="two-colum">
+                        <div class="col">
+                            <select class="input-select tipo_ident" id="lst-empresas" name="empresas" required>
+                                <option value="" disabled selected hidden>Vincular a empresa</option>
+                                <option value="empresa">McDonald's</option>
+                                <option value="empresa">Ministerio de Hacienda</option>
+                                <option value="empresa">AsoTribu</option>
+                                <option value="empresa">HP</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="two-colum">
+                        <div class="col">
+                            <div class="input-container">
+                                <input class="input-text margin" type="text" name="Nombre-Convenio" placeholder="Nombre del convenio" id="txt-nombre-convenio" required/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="radio-estado" id="rdo-activo">
+                                <p>Estado del convenio:</p>
+
+                                <label class="container-radio">Activo
+                              <input type="radio" checked="checked" value="activo" name="radio" required>
+                              <span class="checkmark"></span>
+                            </label>
+
+                                <label class="container-radio">Desactivo
+                              <input type="radio" value="desactivo" name="radio" required>
+                              <span class="checkmark"></span>
+                            </label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="two-colum margin">
+                            <div class="">
+                                <div class="inline-input">
+                                    <label>Cantidad de espacios totales:</label>
+                                    <input class="input-text width" id="num-espacios-totales" type="number" name="Cantidad_espacios" placeholder="0" required/>
+                                </div>
+
+                            </div>
+
+                            <div class="">
+                                <div class="inline-input">
+                                    <label>Fecha de creación:</label>
+                                    <input class="input-text width" id="date-creacion" type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+
+                        </div>
+                    </div>
+                    <!--Descuentos y cantidad de espacios -->
+                    <div class="cantidad-espacios descuentos">
+                        <label>Descuentos y cantidad de espacios:</label>
+
+                        <div class="two-colum">
+                            <div class="input-descuentos-convenios">
+                                <div class="option-descuento">
+                                    <span class="fas fa-wheelchair icon"></span>
+
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-descuentos-discapacitados" type="number" name="descuentos" placeholder="Descuento" />
+                                    </div>
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-espacios-discapacitados" type="number" name="cantidad_espacios" placeholder="Espacio">
+                                    </div>
+                                </div>
+                                <div class="option-descuento">
+                                    <span class="fas fa-car icon "></span>
+
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-descuentos-carro" type="number" name="descuentos" placeholder="Descuento" />
+                                    </div>
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-espacios-carro" type="number" name="cantidad_espacios" placeholder="Espacios">
+                                    </div>
+                                </div>
+                                <div class="option-descuento ">
+                                    <span class="fas fa-motorcycle icon "></span>
+
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-descuentos-moto" type="number" name="descuentos" placeholder="Descuento" />
+                                    </div>
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-espacios-moto" type="number" name="cantidad_espacios" placeholder="Espacios">
+                                    </div>
+                                </div>
+                                <div class="option-descuento ">
+                                    <span class="fas fa-bicycle icon "></span>
+
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-descuentos-bici" type="number" name="descuentos" placeholder="Descuento" />
+                                    </div>
+                                    <div class="inline-input">
+                                        <input class="input-select margin" id="num-espacios-bici" type="number" name="cantidad_espacios" placeholder="Espacios">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn orange" id="btn-modificar-convenio">Guardar</button>
+                </section>
+
+                <section id="ftr-avatar">
+                    <img class="footer-avatar center" src="./img/small-logo/parkit-white.png ">
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal modificar datos encargado de parqueo user -->
+    <div id="modal-modificar-datos-user" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-modificar-datos-user" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Modificar datos</h2>
+            <h3>Información personal</h3>
+            <!-- inputs -->
+            <div class="modal-inputs-container-big">
+                <section id="sct-form-2">
+                    <div class="two-colum">
+                        <div class="col1">
+                            <div class="input-container">
+                                <input class="input-text" name="nombre" placeholder="Nombre" id="txt-nombre" required />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" name="Primer_apellido" placeholder="Primer apellido" id="txt-primer_apellido" required />
+                            </div>
+
+                            <select class="input-select tipo_ident" name="opcion" id="lst-nacionalidades" required>
+                                <option value="" disabled selected hidden
+                                  >Tipo de identificación</option
+                                >
+                                <option value="Juridica">Cédula jurídica</option>
+                                <option value="Nacional">Cédula nacional</option>
+                                <option value="Dimex">DIMEX</option>
+                                <option value="Pasaporte">Pasaporte</option>
+                              </select>
+
+                            <div class="input-container nacimiento">
+                                <p>Fecha de nacimiento</p>
+                                <input class="input-date" type="date" name="fecha_nacimiento" id="date-nacimiento" placeholder="Fecha de nacimiento" required/>
+                            </div>
+                            <!-- Avatar -->
+                            <section id="avatar-selection">
+                                <div>
+                                    <p>Elija un ávatar o suba una foto:</p>
+                                    <div class="avatars-container">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje-shdw.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-white.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-purple.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje-shdw.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-white.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-purple.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje.png ">
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="input-container foto">
+                                <input class="input-file" type="file" id="foto" name="foto" required />
+                                <label for="foto">
+                    Subir fotografía:
+                    <span class="picture_image far fa-file-image"></span
+                  ></label>
+                            </div>
+
+
+                            <button type="button" class="btn orange" id="btn-send">Guardar</button>
+
+                        </div>
+                        <div class="col2">
+
+                            <div class="input-container">
+                                <input class="input-text margin" name="Segundo_nombre" placeholder="Segundo nombre (opcional)" id="txt-segundo_nombre" />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text margin" name="Segundo_apellido" placeholder="Segundo apellido(opcional)" id="txt-segundo_apellido" />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text margin" name="identificación" placeholder="Número de identificación" id="txt-identificacion" required />
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <section id="ftr-avatar">
+                        <img class="footer-avatar center" src="./img/small-logo/parkit-white.png ">
+                    </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal modificar datos espacios y tarifas de parqueo -->
+    <div id="modal-modificar-espacios-tarifas" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-modificar-espacios-tarifas" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Modificar espacios y tarifas del parqueo</h2>
+            <!-- inputs -->
+            <div class="tbl-box-gradient">
+                <table class="tbl-tarifa-gradient ">
+                    <tr>
+                        <td rowspan="2">
+                            <span class="fas fa-wheelchair circleIcon "></span>
+                        </td>
+                        <td rowspan="2">
+                            <input class="num-input" id="num-espacios-discapacitados" type="number" placeholder="0">
+                            <span class="inline"> espacios </span>
+                        </td>
+                        <td rowspan="2 ">
+                            <input class="num-input" id="num-tarifa-discapacitados" type="number" placeholder="0">
+                            <span class="inline"> colones </span>
+
+                        </td>
+                        <td class="preciosTop ">
+                            €3.50
+                        </td>
+                        <td rowspan="2 ">
+                            <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                        </td>
+                        <tr>
+                            <td class="preciosBottom ">
+                                $2.10
+                            </td>
+                        </tr>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2 ">
+                            <span class="fas fa-car circleIcon "></span>
+                        </td>
+                        <td rowspan="2">
+                            <input class="num-input" id="num-espacios-carros" type="number" placeholder="0">
+                            <span class="inline"> espacios </span>
+                        </td>
+                        <td rowspan="2 ">
+                            <input class="num-input" id="num-tarifa-carros" type="number" placeholder="0">
+                            <span class="inline"> colones </span>
+
+                        </td>
+                        <td class="preciosTop ">
+                            €3.50
+                        </td>
+                        <td rowspan="2 ">
+                            <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                        </td>
+                        <tr>
+                            <td class="preciosBottom ">
+                                $2.10
+                            </td>
+                        </tr>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2 ">
+                            <span class="fas fa-motorcycle circleIcon "></span>
+                        </td>
+                        <td rowspan="2">
+                            <input class="num-input" id="num-espacios-motos" type="number" placeholder="0">
+                            <span class="inline"> espacios </span>
+                        </td>
+                        <td rowspan="2 ">
+                            <input class="num-input" id="num-tarifa-motos" type="number" placeholder="0">
+                            <span class="inline"> colones </span>
+                        </td>
+                        <td class="preciosTop ">
+                            €0
+                        </td>
+                        <td rowspan="2 ">
+                            <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                        </td>
+                        <tr>
+                            <td class="preciosBottom ">
+                                $0
+                            </td>
+                        </tr>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2 ">
+                            <span class="fas fa-bicycle circleIcon"></span>
+                        </td>
+                        <td rowspan="2">
+                            <input class="num-input" id="num-espacios-bicis" type="number" placeholder="0">
+                            <span class="inline"> espacios </span>
+                        </td>
+                        <td rowspan="2 ">
+                            <input class="num-input" id="num-tarifa-bicis" type="number" placeholder="0">
+                            <span class="inline"> colones </span>
+                        </td>
+                        <td class="preciosTop ">
+                            €3.00
+                        </td>
+                        <td rowspan="2 ">
+                            <span class="fas fa-arrow-circle-right whiteIcon "></span>
+                        </td>
+                        <tr>
+                            <td class="preciosBottom">
+                                $1.70
+                            </td>
+                        </tr>
+                    </tr>
+                </table>
+                <button class="btn orange" id="btn-modificar-esp_tar">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/controlador-profile-encargado-parqueo-user.js"></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/modals/modificar-convenio.js"></script>
+    <script src="./js/modals/modificar-datos.js"></script>
+    <script src="./js/modals/modificar-tarifa-espacios.js"></script>
+    <script src="./js/services/shared-user.js"></script>
+    <script src="./js/services/service-parqueo.js"></script>
+
+
+</body>
+
+</html>

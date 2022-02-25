@@ -1,0 +1,70 @@
+/* LANDING STYLES */
+
+#banner {
+  height: 800px;
+  background-color: var(--clr-purple);
+  background-image: url("../img/landing/parkit_banner_full.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+#banner .content {
+  width: 800px;
+  margin-left: var(--margin-md);
+  color: var(--clr-white);
+}
+
+#banner .content h1 {
+  font: bold 130px "Open Sans";
+  line-height: 1;
+  margin-bottom: var(--margin-small);
+}
+
+#banner .content p {
+  font: bold 20px "Open Sans";
+  margin-bottom: var(--margin-md);
+}
+
+#banner .content .btns-container .btn {
+  margin-right: var(--margin-md-smal);
+}
+
+.col.promo {
+  height: 450px;
+}
+
+.promo-container .col {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 30px;
+}
+
+.promo-container h2 {
+  font: bold 56px "Open Sans";
+  color: var(--clr-white);
+  margin-bottom: var(--margin-md-smal);
+}
+
+.promo-container p {
+  width: 80%;
+  color: var(--clr-white);
+  margin-bottom: var(--margin-md-smal);
+}
+
+.promo-container .btn {
+  width: 230px;
+  text-align: center;
+}
+
+#sct-promo-1 .promo {
+  background-image: url("../img/landing/promo_1.jpg");
+  background-size: cover;
+}
+
+#sct-promo-2 .promo {
+  background-image: url("../img/landing/promo_2.jpg");
+  background-size: cover;
+}

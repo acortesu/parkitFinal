@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Landing Page</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/encargado-empresa-user.css">
+    <link rel="stylesheet" href="css/solicitud-ingreso-parqueos.css" />
+    <link rel="stylesheet" href="css/modals/modal-registrartarjeta.css">
+    <link rel="stylesheet" href="css/modals/modal-realizarpagos.css">
+    <link rel="stylesheet" href="css/modals/modal-modificartarjeta.css">
+    <link rel="stylesheet" href="css/modals/modal-modificardato-encempleados-empleados.css">
+    <link rel="stylesheet" href="css/modals/modal-enc_empresas-modificar_empleado.css">
+</head>
+
+<body>
+    <div id="page-container">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <!-- Name del active user -->
+                    <span id="nav-user-name"></span>
+                    <div class="round-img">
+                        <img id="nav-user-img" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a id="btn-modificar-datos-user">Editar perfil</a></li>
+                        <li><a href="./index.html">Cerrar sesion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="/homeapp-encargado-empresa.html" class="link">HOME</a>
+                <a href="#" class="link">MIS TARJETAS</a>
+                <a href="#" class="link">MIS RESERVAS</a>
+                <a href="#" class="link">MIS CONVENIOS</a>
+                <a href="#" class="link">MIS PAGOS</a>
+                <a href="#" class="link">REGISTRAR</a>
+                <a href="#" class="link">BUSCAR</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+                <section class="profile">
+                    <div class="profile-container">
+                        <div class="img-container">
+                            <img id="profile-user-photo" src="./img/erick.jpg" alt="" />
+                        </div>
+
+                        <div class="info-personal">
+                            <h2 id="profile-user-nombre"></h2>
+                            <p id="profile-user-numero_id"></p>
+                            <p id="profile-user-correo"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-content">
+                    <section class="user-cards">
+                        <!-- Mis tarjetas-->
+                        <h2>Mis tarjetas</h2>
+                        <div class="cards-container">
+                            <div class="tbl-box">
+                                <table class="tbl-reporte" id="table-tarjetas">
+                                    <!-- agregar thead -->
+                                    <thead>
+                                        <tr>
+                                            <th>Tipo de tarjeta</th>
+                                            <th>Número de tarjeta</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <!-- agregar tbody borrar contenido -->
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn orange" id="btn-registrar-tarjeta">Registrar nueva tarjeta</button>
+                    </section>
+
+                    <section class="table-container">
+                        <h2>Mis reservas realizadas</h2>
+                        <div id="sct-reservas">
+                            <div class="multi-input-container">
+                                <div class="input-container fecha">
+                                    <label>DESDE</label>
+                                    <input class="input-text fecha" type="date" name="fecha" placeholder="01/01/2022" id="date-desde" required/>
+                                </div>
+
+                                <div class="input-container fecha">
+                                    <label>HASTA</label>
+                                    <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022" id="date-hasta" required/>
+                                </div>
+                            </div>
+                            <div class="input-container">
+                                <button class="btn orange btn1 btn_listar" id="btn-send_reservas">Enviar</button>
+                            </div>
+                        </div>
+
+                        <div class="tbl-box">
+                            <table class="tbl-reporte">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Duración</th>
+                                    <th>Hora</th>
+                                    <th>Parqueo</th>
+                                    <th>Monto</th>
+                                </tr>
+                                <tr>
+                                    <td>13/07/2020</td>
+                                    <td>2 horas</td>
+                                    <td>12:30 pm</td>
+                                    <td>El Palomar</td>
+                                    <td>$4</td>
+                                </tr>
+                                <tr>
+                                    <td>14/07/2020</td>
+                                    <td>2 horas</td>
+                                    <td>11:30 am</td>
+                                    <td>El Palomar</td>
+                                    <td>$4</td>
+                                </tr>
+                                <tr>
+                                    <td>15/07/2020</td>
+                                    <td>1 horas</td>
+                                    <td>10:00 am</td>
+                                    <td>El Palomar</td>
+                                    <td>$2</td>
+                                </tr>
+                                <tr>
+                                    <td>19/07/2020</td>
+                                    <td>2 horas</td>
+                                    <td>09:00 am</td>
+                                    <td>El Palomar</td>
+                                    <td>$4</td>
+                                </tr>
+                                <tr>
+                                    <td>19/07/2020</td>
+                                    <td>1 horas</td>
+                                    <td>09:00 am</td>
+                                    <td>El Higuerón</td>
+                                    <td>$2</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="two-colum">
+                        <div class="mis-convenios col-content">
+                            <h2>Mis convenios</h2>
+                            <div class="colored-container banner-purple">
+                                <div class="main-number">
+                                    3
+                                </div>
+                                <div class="convenios-list">
+                                    <div class="convenio convenioLayout">
+                                        <p id="convenio-pago">Parqueo El Parque</p>
+                                        <div class="count">
+                                            <i class="fas fa-caret-right"></i>10%
+                                        </div>
+                                    </div>
+                                    <div class="convenio convenioLayout">
+                                        <p id="convenio-pago">Parqueo Chapito</p>
+                                        <div class="count">
+                                            <i class="fas fa-caret-right"></i>15%
+                                        </div>
+                                    </div>
+                                    <div class="convenio convenioLayout">
+                                        <p id="convenio-pago">Parqueo El Parque</p>
+                                        <div class="count">
+                                            <i class="fas fa-caret-right"></i>15%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="margin"> Recuerde siempre registrarse en el parqueo del convenio</p>
+                        </div>
+                        <div class="margin">
+                            <h2>Mis pagos</h2>
+                            <table class="tabla-mispagos colored-container banner-green">
+                                <tr>
+                                    <td class="number-tabla-mispagos">1.</td>
+                                    <div class="contenido-tabla-mispagos">
+                                        <td>Parqueo Chayito</td>
+                                        <td><i class="fas fa-caret-right"></i></td>
+                                        <td>₡45.000</td>
+                                        <td>
+                                            <a class="far fa-credit-card" id="btn-realizar_pagos"></a>
+                                        </td>
+                                    </div>
+                                </tr>
+                                <tr>
+                                    <td class="number-tabla-mispagos">2.</td>
+                                    <td>Parqueo Chayito</td>
+                                    <td><i class="fas fa-caret-right"></i></td>
+                                    <td>₡50.000</td>
+                                    <td>
+                                        <a class="far fa-credit-card" id="btn-realizar_pagos"></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="number-tabla-mispagos">3.</td>
+                                    <td>Parqueo Chayito</td>
+                                    <td><i class="fas fa-caret-right"></i></td>
+                                    <td>₡50.000</td>
+                                    <td>
+                                        <a class="far fa-credit-card" id="btn-realizar_pagos"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p class="margin"> Recuerde siempre registrarse en el parqueo del convenio</p>
+                        </div>
+                    </section>
+
+
+                    <section class="form-all-black dashboard">
+                        <h2>Registrar empleado</h2>
+
+                        <form id="rgt-empleados">
+                            <div class="form">
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <input class="input-text" name="nombre" placeholder="Nombre" id="txt-nombre" required/>
+                                        <input class="input-text" name="Primer_apellido" placeholder="Primer apellido" id="txt-primer_apellido" required/>
+
+                                        <select class="input-select" name="opcion" id="lst-nacionalidades" required>
+                                          <option value="" disabled selected hidden
+                                         >Tipo de identificación</option>
+                                        <option value="Juridica">Cédula jurídica</option>
+                                        <option value="Nacional">Cédula nacional</option>
+                                        <option value="Dimex">DIMEX</option>
+                                        <option value="Pasaporte">Pasaporte</option>
+                                        </select>
+
+                                        <div class="col">
+                                            <label>Fecha de nacimiento:</label>
+                                            <input class="input-date" type="date" name="fecha_nacimiento" id="date-nacimiento" placeholder="Fecha de nacimiento" required />
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col">
+                                        <input class="input-text margin" name="Segundo_nombre" placeholder="Segundo nombre (opcional)" id="txt-segundo_nombre" />
+                                        <input class="input-text margin" name="Segundo_apellido" placeholder="Segundo apellido(opcional)" id="txt-segundo_apellido" />
+                                        <input class="input-text margin" name="identificación" placeholder="Número de identificación" id="txt-identificacion" required/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <section>
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <label>Fecha de contratacion:</label>
+                                        <input class="input-date" type="date" name="fecha_contratacion" id="date_contratacion" required/>
+                                    </div>
+                                    <div class="col">
+                                        <input class="input-text margin" id="txt_puesto" name="puesto_empleado" placeholder="Puesto del empleado" type="text" required/>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section>
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <input class="input-text" id="txtContrasenna" placeholder="Contraseña" type="password" required>
+                                    </div>
+                                    <div class="col">
+                                        <input class="input-text" id="txtConfirmacion" placeholder="Verificar" type="password" required>
+                                    </div>
+
+                                </div>
+                                <div class="two-colum">
+                                    <div class="col">
+                                        <select class="input-select" name="opcion" id="lst-parqueos" required>
+                                            <option value="" disabled selected hidden
+                                           >Vincular a parqueo</option>
+                                          <option value="#">El parque</option>
+                                          <option value="#">Chayito</option>
+                                          <option value="#">El Higuerón</option>
+                                         </select>
+                                    </div>
+                                    <div class="col">
+                                        <input class="input-text" id="input-correo" placeholder="Correo electrónico" type="text" required>
+                                    </div>
+                                </div>
+
+
+                            </section>
+                        </form>
+                        <button class="btn btn1 orange" id="btn_registrar_empleado">Registrar</button>
+                    </section>
+
+                    <!-- Listar empleados -->
+                    <section>
+                        <h2>Empleados registrados</h2>
+                        <input class="input-finder" type="text" placeholder="BUSCAR EMPLEADOS" required />
+                        <div class="tbl-box">
+                            <table class="tbl-reporte">
+                                <tr>
+                                    <th>NOMBRE COMPLETO</th>
+                                    <th>CORREO ELECTRÓNICO</th>
+                                    <th>CONVENIO</th>
+                                    <th>ESTADO</th>
+                                </tr>
+                                <tr>
+                                    <td>Ricardo Loría</td>
+                                    <td>fernando@mcdonaldscr.com</td>
+                                    <td>Parqueo El Guapón</td>
+                                    <td>Activo</td>
+                                </tr>
+                                <tr>
+                                    <td>Ricardo Loría</td>
+                                    <td>fernando@mcdonaldscr.com</td>
+                                    <td>Parqueo El Guapón</td>
+                                    <td>Activo</td>
+                                </tr>
+                                <tr>
+                                    <td>Ricardo Loría</td>
+                                    <td>fernando@mcdonaldscr.com</td>
+                                    <td>Parqueo El Guapón</td>
+                                    <td>Activo</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+    <section id="ftr-avatar">
+        <img class="footer-avatar" src="./img/small-logo/parkit-white.png " />
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Modal registrar tarjeta -->
+
+    <div id="modal-registrar_tarjeta" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-registrar-tarjeta" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Registrar tarjeta</h2>
+            <!-- inputs -->
+            <div class="modal-inputs-container-big">
+                <section id="sct-form-2">
+                    <div class="two-colum">
+                        <div class="col1">
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Número de tarjeta" type="number" id="num_card" required />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" id="nombre_titular" placeholder="Nombre del titular de la tarjeta" required />
+                            </div>
+                            <button type="button" class="btn orange" id="btn-registrar-card">
+                  Registrar
+                </button>
+                        </div>
+                        <div class="col2">
+                            <div class="input-container vencimiento">
+                                <p>Fecha de vencimiento</p>
+                                <input class="input-text fecha" type="date" name="fecha_vencimiento" id="date-fecha-vencimiento" placeholder="01/01/2022" required/>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" id="num-cod-seguridad" placeholder="Código de seguridad" required/>
+                            </div>
+                        </div>
+                    </div>
+                    <section id="ftr-avatar">
+                        <img class="footer-avatar center" src="./img/small-logo/parkit-white.png " />
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal modificar tarjeta -->
+    <div id="modal-modificar_tarjeta" class="modal ">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-modificar-tarjeta" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Modificar tarjeta</h2>
+
+            <div class="modal-subtitle">
+                <span class="cc fab fa-cc-visa"></span>
+                <h3> ****-3456</h3>
+            </div>
+            <!-- inputs -->
+            <div class="modal-inputs-container-big">
+                <section id="sct-form-1">
+                    <div class="two-colum">
+                        <div class="col1">
+                            <div class="input-container">
+                                <input class="input-text" id="num_card_modif" placeholder="Número de tarjeta" required />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" id="nombre_titular_modif" placeholder="Nombre del titular de la tarjeta" required />
+                            </div>
+                            <div class="radio-estado">
+
+                                <label class="container-radio">Activo
+                          <input type="radio" checked="checked" name="radio" id="rdio_estado_modif" required>
+                          <span class="checkmark"></span>
+                        </label>
+
+                                <label class="container-radio">Desactivo
+                          <input type="radio" name="radio" required>
+                          <span class="checkmark"></span>
+                        </label>
+
+                            </div>
+                            <button type="button" class="btn orange" id="btn-modificar-tarjeta">Guardar</button>
+
+                        </div>
+                        <div class="col2">
+                            <div class="input-container vencimiento">
+                                <p>Fecha de vencimiento</p>
+                                <input class="input-text fecha" id="date-fecha-vencimiento_modif" type="date" name="fecha_nacimiento " placeholder="01/01/2022" required>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" id="num-cod-seguridad_modif" placeholder="Código de seguridad" required/>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <section id="ftr-avatar">
+                        <img class="footer-avatar center" src="./img/small-logo/parkit-white.png ">
+                    </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal realizar pagos -->
+
+    <div id="modal-realizar_pagos" class="modal ">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-realizar-pagos" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Realizar pagos</h2>
+            <!-- inputs -->
+            <div class="modal-inputs-container-big">
+                <div class="tbl-box">
+                    <table class="tbl-factura">
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Duración</th>
+                            <th>Hora</th>
+                            <th>Parqueo</th>
+                            <th>Monto</th>
+                        </tr>
+                        <div class="line"></div>
+                        <tr>
+                            <td>12/07/2020</td>
+                            <td>2 horas</td>
+                            <td>3:00 pm</td>
+                            <td>El Palomar</td>
+                            <td>$4</td>
+                        </tr>
+                    </table>
+                    <div class="total-pago">
+                        <p>TOTAL:</p>
+                        <p>$4</p>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <select class="input-select-modal" name="tarjeta" required>
+    <option value="" disabled selected hidden> Seleccione su tarjeta</option>
+    <option value="tarjeta">****-2234</option>
+    <option value="tarjeta">****-3456</option>
+    </select>
+                </div>
+                <button type="button" class="btn orange" id="btn-pagar">Pagar</button>
+            </div>
+            <section id="ftr-avatar">
+                <img class="footer-avatar center" src="./img/small-logo/parkit-white.png ">
+            </section>
+        </div>
+
+    </div>
+
+    <!-- Modal modificar datos personales del encargado empresas  -->
+    <div id="modal-modificar_datos_empleados" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-login" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Modificar datos</h2>
+            <h3>Información personal</h3>
+            <!-- inputs -->
+            <div class="modal-inputs-container-big">
+                <section id="sct-form-2">
+                    <div class="two-colum">
+                        <div class="col1">
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Nombre" required />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Primer apellido" required />
+                            </div>
+
+                            <select class="input-select tipo_ident" name="cedulas" required>
+                           <option value="" disabled selected hidden>Tipo de identificación</option>
+                           <option value="cedula">Cédula jurídica</option>
+                           <option value="cedula">Cédula nacional</option>
+                          <option value="cedula">DIMEX</option>
+                          <option value="cedula">Pasaporte</option>
+                          </select>
+                            <div class="input-container contratacion">
+                                <p>Fecha de contratación</p>
+                                <input class="input-text fecha" type="date" name="fecha_contratación " placeholder="01/01/2022">
+                            </div>
+                            <div class="input-container nacimiento">
+                                <p>Fecha de nacimiento</p>
+                                <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                            </div>
+                            <!-- Avatar -->
+                            <section id="avatar-selection">
+                                <div>
+                                    <p>Elija un ávatar o suba una foto:</p>
+                                    <div class="avatars-container">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje-shdw.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-white.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-purple.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje-shdw.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-white.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-purple.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje.png ">
+                                    </div>
+                                </div>
+                            </section>
+                            <div class="input-container foto">
+                                <input class="input-file" type="file" id="foto" name="foto" required />
+                                <label for="foto">
+                    Subir fotografía:
+                    <span class="picture_image far fa-file-image"></span
+                  ></label>
+                            </div>
+
+                            <button type="button" class="btn orange" id="btn-pagar">Guardar</button>
+
+                        </div>
+                        <div class="col2">
+
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Segundo nombre (opcional)" />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Segundo apellido (opcional)" />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Número de identificación" required/>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Puesto del empleado" required/>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <section id="ftr-avatar">
+                        <img class="footer-avatar center" src="./img/small-logo/parkit-white.png ">
+                    </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal modificar datos de empresa user -->
+    <div id="modal-modificar_datos_empresa_user" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-login" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Modificar datos</h2>
+            <h3>Información personal</h3>
+            <!-- inputs -->
+            <div class="modal-inputs-container-big">
+                <section id="sct-form-2">
+                    <div class="two-colum">
+                        <div class="col1">
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Nombre" required />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Primer apellido" required />
+                            </div>
+
+                            <select class="input-select tipo_ident" name="cedulas" required>
+                           <option value="" disabled selected hidden>Tipo de identificación</option>
+                           <option value="cedula">Cédula jurídica</option>
+                           <option value="cedula">Cédula nacional</option>
+                          <option value="cedula">DIMEX</option>
+                          <option value="cedula">Pasaporte</option>
+                          </select>
+                            <div class="input-container contratacion">
+                                <p>Fecha de contratación</p>
+                                <input class="input-text fecha" type="date" name="fecha_contratación " placeholder="01/01/2022">
+                            </div>
+                            <div class="input-container nacimiento">
+                                <p>Fecha de nacimiento</p>
+                                <input class="input-text fecha" type="date" name="fecha_nacimiento " placeholder="01/01/2022">
+                            </div>
+                            <!-- Avatar -->
+                            <section id="avatar-selection">
+                                <div>
+                                    <p>Elija un ávatar o suba una foto:</p>
+                                    <div class="avatars-container">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje-shdw.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-white.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-purple.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje-shdw.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-white.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-purple.png ">
+                                        <img class="avatar-log" src="./img/small-logo/parkit-oranje.png ">
+                                    </div>
+                                </div>
+                            </section>
+
+
+                            <button type="button" class="btn orange" id="btn-pagar">Guardar</button>
+
+                        </div>
+                        <div class="col2">
+
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Segundo nombre (opcional)" />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Segundo apellido (opcional)" />
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Número de identificación" required/>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Puesto del empleado" required/>
+                            </div>
+                            <div class="input-container">
+
+                                <label class="container-radio">Activo
+                              <input type="radio" checked="checked" name="radio">
+                              <span class="checkmark"></span>
+                              </label>
+
+                                <label class="container-radio">Desactivo
+                                      <input type="radio" name="radio">
+                                      <span class="checkmark"></span>
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="./js/controlador-profile-encargado-empresa-user.js"></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/modals/registro-tarjeta.js"></script>
+    <script src="./js/modals/modificar-tarjeta.js"></script>
+    <script src="./js/modals/realizar_pagos.js"></script>
+    <script src="./js/services/service-tarjeta.js"></script>
+    <script src="./js/services/shared-user.js"></script>
+    <script src="./js/services/service-empresa-user.js"></script>
+    <!-- controlador del nav -->
+    <!-- controlador de profile -->
+    <script src="./js/controlador-profiles.js"></script>
+    <script src="./js/controlador-user-perfil.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+.line-banner-purple {
+    border-bottom: black;
+}
+
+.tabla-misconvenios {
+    font: var( --typo-name);
+    color: var(--clr-white);
+}
+
+.park-name-misconvenios {
+    margin-left: 60px;
+    margin-bottom: 60px;
+}
+
+.flecha-misconvenios {
+    color: var(--clr-black);
+    font: var( --typo-name);
+    padding-left: 20px;
+}
+
+.number-tabla-mispagos {
+    font: var(--typo-title-pt);
+    padding-right: 30px;
+}
+
+.contenido-tabla-mispagos {
+    font: var( --typo-name);
+}
+
+.tabla-mispagos {
+    font: var( --typo-name);
+}
+
+.margin {
+    margin-left: 20px;
+}
+
+.convenioLayout {
+    width: 76%;
+}
+
+#convenio-pago {
+    width: 53%;
+    margin-right: 10%;
+}
+
+.tabla-mispagos td {
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+.edit-profile {
+    margin-left: 800px;
+    top: 1200px;
+    color: var(--clr-white);
+}

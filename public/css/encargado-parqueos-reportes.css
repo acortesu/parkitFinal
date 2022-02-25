@@ -1,0 +1,110 @@
+.info-personal h3 {
+    margin-bottom: var(--margin-small);
+}
+
+.user-reports h2 {
+    color: var(--clr-white);
+    font: var(--typo-subheader);
+    margin-bottom: var(--margin-md-smal);
+}
+
+.subheader-text {
+    color: var(--clr-white);
+    font: var(--typo-name-bold);
+    margin: var(--margin-md) 0 var(--margin-md-smal) 0;
+}
+
+.input-container {
+    width: 20%;
+    margin-right: var(--margin-small);
+    margin-bottom: var(--margin-md-smal);
+}
+
+.input-cont {
+    width: 20%;
+    margin-bottom: 45px;
+}
+
+.input-container p {
+    font: var(--typo-button);
+    text-transform: uppercase;
+    margin-bottom: var(--margin-min);
+    color: var(--clr-white);
+}
+
+.report-result {
+    font: var(--typo-subheader);
+    color: var(--clr-white);
+    display: flex;
+    border-bottom: 1px solid var(--clr-green);
+    padding-bottom: var(--margin-min);
+}
+
+.report-result p {
+    margin-right: var(--margin-min);
+}
+
+.descargar p {
+    font: var(--typo-min);
+    color: var(--clr-white);
+    margin-top: var(--margin-min);
+    margin-right: var(--margin-min);
+}
+
+.fas {
+    font: 18px;
+    color: var(--clr-naranja);
+}
+
+.descargar {
+    display: flex;
+    align-items: center;
+}
+
+.generar-container {
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.tbl-box {
+    background: linear-gradient(180deg, #17181B 0%, rgba(23, 24, 27, 0) 100%);
+    color: var(--clr-white);
+    width: 100%;
+}
+
+.tbl-reporte {
+    margin-bottom: var(--margin-md-smal);
+    text-align: center;
+    width: 100%;
+}
+
+.tbl-reporte th {
+    border-bottom: 1px solid var(--clr-green);
+    font: var(--typo-name-bold);
+    padding-top: var(--margin-md);
+    padding-bottom: var(--margin-min);
+    width: 20%;
+}
+
+.tbl-reporte td {
+    font: var(--typo-global);
+    padding-top: var(--margin-min);
+}
+
+#ftr-avatar {
+    text-align: center;
+}
+
+.logo-sidenav {
+    position: absolute;
+    width: 172px;
+    height: 68px;
+    left: 24px;
+    top: 21px;
+}
+
+.footer-avatar {
+    width: 204px;
+    height: 188px;
+}

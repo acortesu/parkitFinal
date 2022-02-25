@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Landing Page</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/modals/modal-modificardatos-empresas.css">
+</head>
+
+<body>
+    <div id="page-container">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <span>McDonald’s</span>
+                    <div class="round-img">
+                        <img src="./img/logo_mc.png" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a id="btn-editar-datos-empresa">Editar perfil</a></li>
+                        <li><a href="/index.html">Cerrar sesion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="#" class="link active">HOME</a>
+                <a href="#" class="link ">EMPLEADOS</a>
+                <a href="#" class="link">MIS CONVENIOS</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+
+                <section class="profile">
+                    <div class="profile-container">
+                        <div class="img-container mclogo">
+                            <img src="./img/mclogo2.png" alt="" />
+                        </div>
+
+                        <div class="info-personal">
+                            <h2>McDonald’s</h2>
+                            <p>Encargado(a) de empresa: Alonso Cortés</p>
+                            <p>rh@mcdonaldscr.com</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-content">
+                    <!-- Registro de empleado -->
+                    <section>
+                        <h2>Empleados registrados</h2>
+                        <input class="input-finder" type="text" placeholder="buscar empleados" required />
+                        <div class="tbl-box">
+                            <table class="tbl-reporte">
+                                <tr>
+                                    <th>NOMBRE COMPLETO</th>
+                                    <th>CORREO ELECTRÓNICO</th>
+                                    <th>CONVENIO</th>
+                                    <th>ESTADO</th>
+                                </tr>
+                                <tr>
+                                    <td>Ricardo Loría</td>
+                                    <td>fernando@mcdonaldscr.com</td>
+                                    <td>Parqueo El Guapón</td>
+                                    <td>Activo</td>
+                                </tr>
+                                <tr>
+                                    <td>Ricardo Loría</td>
+                                    <td>fernando@mcdonaldscr.com</td>
+                                    <td>Parqueo El Guapón</td>
+                                    <td>Activo</td>
+                                </tr>
+                                <tr>
+                                    <td>Ricardo Loría</td>
+                                    <td>fernando@mcdonaldscr.com</td>
+                                    <td>Parqueo El Guapón</td>
+                                    <td>Activo</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="mis-convenios col-content">
+                            <h2>Mis convenios</h2>
+                            <div class="colored-container banner-purple">
+                                <div class="main-number">
+                                    3
+                                </div>
+                                <div class="convenios-list">
+                                    <div class="convenio">
+                                        <p>Parqueo El Parque</p>
+                                        <div class="count">
+                                            <i class="fas fa-caret-right"></i>10%
+                                        </div>
+                                    </div>
+                                    <div class="convenio">
+                                        <p>Parqueo Chapito</p>
+                                        <div class="count">
+                                            <i class="fas fa-caret-right"></i>15%
+                                        </div>
+                                    </div>
+                                    <div class="convenio">
+                                        <p>Parqueo El Parque</p>
+                                        <div class="count">
+                                            <i class="fas fa-caret-right"></i>15%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Contenedor general -->
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Modal modificar datos empresas -->
+    <div id="modal-modificar_datos_empresas" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-big">
+            <span id="close-modal-modificar-datos-empresa" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Modificar datos</h2>
+            <!-- inputs -->
+            <div class="modal-inputs-container-big">
+                <section id="sct-form-2">
+                    <div class="two-colum">
+                        <div class="col1">
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Nombre" id="txt-nombre" required />
+                            </div>
+                            <div class="input-container logo">
+                                <input class="input-file" type="file" id="logo" name="logo" />
+                                <label for="logo">Subir logo:
+                                  <span class="picture_image far fa-file-image"></span>
+                                </label>
+                            </div>
+                            <button type="button" class="btn orange" id="btn-guardar">Guardar</button>
+                        </div>
+                        <div class="col2">
+
+                            <div class="input-container">
+                                <input class="input-text" placeholder="Razón social" id="razon-social" required />
+                            </div>
+
+                            <div class="radio-estado">
+
+                                <label class="container-radio">Activo
+                              <input type="radio" checked="checked" name="radio">
+                              <span class="checkmark"></span>
+                            </label>
+
+                                <label class="container-radio">Desactivo
+                              <input type="radio" name="radio">
+                              <span class="checkmark"></span>
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <section id="ftr-avatar">
+                <img class="footer-avatar center" src="./img/small-logo/parkit-white.png ">
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Referencia script leaflet -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="./js/controlador-user-perfil.js"></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/controlador-profile-empresas.js"></script>
+    <script src="./js/modals/modificar-datos-empresa.js"></script>
+    <script src="./js/map.js"></script>
+</body>
+
+</html>

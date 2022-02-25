@@ -1,0 +1,106 @@
+#result {
+  color: var(--clr-white);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.park-card {
+  /* border: solid #ffffff; */
+  width: 50%;
+  margin: 0 auto;
+  transition: all ease 300ms;
+}
+
+@media only screen and (max-width: 1390px) {
+  #result {
+    flex-direction: column;
+  }
+  .park-card {
+    width: 100%;
+  }
+}
+
+.park-card-container {
+  height: 320px;
+  padding: 10px;
+}
+
+.park-card-container .col-photo {
+  background-color: var(--clr-purple);
+  background-size: cover;
+  background-position: center;
+}
+
+.park-card-container .col-info {
+  position: relative;
+}
+
+.park-card-container .titular {
+  font: var(--typo-subheader);
+  margin: var(--margin-small) 0 var(--margin-min) var(--margin-md-smal);
+}
+
+.park-card-container .colones {
+  font: var(--typo-subheader);
+  margin-right: var(--margin-min);
+}
+
+.park-card-container .dol-euro {
+  font: var(--typo-min);
+}
+
+.park-card-container .precios,
+.park-card-container .direccion,
+.park-card-container .registrar,
+.park-card-container .sct-reviews {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: var(--margin-small) var(--margin-small) var(--margin-small)
+    var(--margin-md-smal);
+}
+
+.park-card-container .reviews p,
+.park-card-container .direccion p,
+.park-card-container .reviews p {
+  margin-left: var(--margin-min);
+  font: var(--typo-min);
+}
+
+.park-card-container .fa-star,
+.park-card-container .fa-star-half-alt {
+  font-size: 10px;
+}
+
+.park-card-container .fas {
+  color: var(--clr-naranja);
+}
+
+.park-card-container .star-half {
+  color: var(--clr-dark-grey);
+}
+
+.park-card-container .vehiculos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-purple);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.park-card-container .vehiculos span {
+  background-color: var(--clr-dark-grey);
+  height: var(--margin-md-smal);
+  width: var(--margin-md-smal);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: var(--margin-min);
+}

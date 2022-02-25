@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <title>Parkit - homeUp</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <!-- css de la pagina -->
+    <link rel="stylesheet" href="css/encargado-parqueos-reportes.css" />
+
+</head>
+
+<body>
+    <div id="page-container profile-admin">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <!-- Name del active user -->
+                    <span id="nav-user-name"></span>
+                    <div class="round-img">
+                        <img src="./img/sample_profile.png" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a id="btn-editar-datos-empresa">Editar perfil</a></li>
+                        <li><a href="./index.html">Cerrar sesion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="/homeapp-admin.html" class="link">Home</a>
+                <a href="/profile-admin.html" class="link active">Mantenimientos</a>
+                <a href="#" class="link">Parqueos</a>
+                <a href="#" class="link">Registros</a>
+                <a href="/reportes-admin.html" class="link">Reportes</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+                <!-- Profile section -->
+                <section class="profile">
+                    <div class="profile-container">
+                        <div class="img-container">
+                            <img src="./img/erick.jpg" alt="" />
+                        </div>
+
+                        <div class="info-personal">
+                            <h2 id="profile-user-nombre"></h2>
+                            <h3>Administrador General de Park It</h3>
+                            <p id="profile-user-numero_id"></p>
+                            <p id="profile-user-correo"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="dashboard-content">
+
+                    <!-- Mis reportes -->
+                    <section class="user-reports" id="reportes-enc-parqueos">
+                        <h2>Mis reportes</h2>
+
+                        <div class="report-container" id="reporte-ingresos-recibidos">
+                            <div class="subheader-text">
+                                <span>1. Ingresos recibidos de todos los parqueos</span>
+                            </div>
+                            <div class="generar-container">
+                                <div class="input-container fecha">
+                                    <p>DESDE</p>
+                                    <input class="input-text fecha" type="date" name="fecha_desde_rep1" placeholder="01/01/2022" id="dte-desde" required>
+                                </div>
+
+                                <div class="input-container fecha">
+                                    <p>HASTA</p>
+                                    <input class="input-text fecha" id="dte-hasta_rep1" type="date" name="fecha_hasta" placeholder="01/01/2022" required>
+                                </div>
+
+                                <button class="btn orange gen input-cont" id="btn-ingresos-recibidos">Generar</button>
+                            </div>
+
+                            <div class="report-result">
+                                <p>Los ingresos totales de todos los parqueos fue:</p> <span id="reporte1-total">₡2.300.000</span>
+                            </div>
+
+                            <div class="input-container descargar">
+                                <p>Descargar reporte</p>
+                                <i class="fas fa-file-pdf"></i>
+                                <a href="" download=""></a>
+                            </div>
+                        </div>
+
+                        <div class="report-container" id="reporte-ingresos-parqueo">
+                            <div class="subheader-text">
+                                <span>2. Ingresos de un parqueo</span>
+                            </div>
+
+                            <div class="generar-container">
+                                <div class="input-container">
+                                    <input class="input-text" id="txt-nombre-parqueo_rep2" placeholder="Nombre del parqueo" type="text" required />
+                                </div>
+
+                                <div class="input-container fecha">
+                                    <p>DESDE</p>
+                                    <input class="input-text fecha" type="date" name="fecha_desde" placeholder="01/01/2022" id="dte-desde_rep2" required>
+                                </div>
+
+                                <div class="input-container fecha">
+                                    <p>HASTA</p>
+                                    <input class="input-text fecha" id="dte-hasta_rep2" type="date" name="fecha_hasta" placeholder="01/01/2022" required>
+                                </div>
+                                <button class="btn orange input-cont" id="btn-reporte-ingresos-parqueo">Generar</button>
+                            </div>
+
+                            <div class="report-result">
+                                <p>Los ingresos totales del parqueo fue:</p> <span id="reporte1-total">₡253.000</span>
+                            </div>
+
+                            <div class="input-container descargar">
+                                <p>Descargar reporte</p>
+                                <i class="fas fa-file-pdf"></i>
+                                <a href="" download=""></a>
+                            </div>
+                        </div>
+
+                        <div class="report-container">
+                            <div class="subheader-text"> <span>3. Bitácora transaccional de usuarios</span></div>
+
+                            <div class="generar-container" id="reporte-bitacora-transaccion">
+                                <div class="input-container">
+                                    <select class="input-select" name="opcion" id="lst-provincia" required>
+
+                                        <option value="" disabled selected hidden>Acción</option>
+                                        <option value="Registrar">Registrar</option>
+                                        <option value="Modificar">Modificar</option>
+                                        <option value="Activar">Activar</option>
+                                        <option value="Desactivar">Desactivar</option>
+                                        <option value="Eliminar">Eliminar</option>
+                                      </select>
+                                </div>
+
+                                <div class="input-container fecha">
+                                    <p>DESDE</p>
+                                    <input class="input-text fecha" type="date" name="fecha_desde" placeholder="01/01/2022" id="dte-desde_rep3" required>
+                                </div>
+
+                                <div class="input-container fecha">
+                                    <p>HASTA</p>
+                                    <input class="input-text fecha" id="dte-hasta_rep3" type="date" name="fecha_hasta" placeholder="01/01/2022" required>
+                                </div>
+
+                                <button class="btn orange input-cont" id="btn-reporte-historial-ingresos">Generar</button>
+
+                            </div>
+
+                            <div class="tbl-box">
+                                <table class="tbl-reporte">
+                                    <tr>
+                                        <th>NOMBRE DEL USUARIO</th>
+                                        <th>FECHA</th>
+                                        <th>HORA</th>
+                                        <th>ACCIÓN</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Rodrigo Gomez</td>
+                                        <td>12-12-2019</td>
+                                        <td>3:00 pm</td>
+                                        <td>Registrar</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+
+                            <div class="input-container descargar">
+                                <p>Descargar reporte</p>
+                                <i class="fas fa-file-pdf"></i>
+                                <a href="" download=""></a>
+                            </div>
+                        </div>
+
+                    </section>
+
+                </div>
+                <section id="ftr-avatar">
+                    <img class="footer-avatar center" src="./img/small-logo/parkit-white.png ">
+                </section>
+
+            </main>
+            <!-- Footer -->
+            <footer>
+                <div class="left">
+                    <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+                    <p>www.ifam.go.cr</p>
+                    <div class="social">
+                        <span class="fab fa-facebook-square"></span>
+                        <span class="fab fa-instagram"></span>
+                    </div>
+                    <p>2250-0000 ext 2010</p>
+                    <p>info@parkit.com</p>
+                </div>
+                <div class="rigt">
+                    <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+                </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="./js/services/shared-user.js"></script>
+            <!-- controlador del nav -->
+            <!-- controlador de profile -->
+            <script src="./js/controlador-profiles.js"></script>
+            <script src="./js/controlador-user-perfil.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Información del encargado de parqueo</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/daa42c8e16.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/solicitud-ingreso-parqueos.css" />
+</head>
+
+<body>
+    <!-- Navbar superior -->
+    <nav id="main-nav">
+        <div class="nav-content">
+            <a href="/index.html">
+                <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            </a>
+        </div>
+    </nav>
+    <!-- Contenedor general -->
+
+    <!-- Contenedor general -->
+
+    <main class="form-all-black" id="registro-encargado-parqueo">
+        <section>
+            <h2>Registrarse</h2>
+            <h3>2. Información del encargado de parqueo.</h3>
+        </section>
+
+        <form>
+            <div class="form">
+                <div class="two-colum">
+                    <div class="col">
+                        <div>
+                            <input class="input-text" name="nombre" placeholder="Nombre" id="txt-nombre" required/>
+                        </div>
+                        <div>
+                            <input class="input-text" name="Primer_apellido" placeholder="Primer apellido" id="txt-primer_apellido" required/>
+                        </div>
+                        <div>
+                            <select class="input-select tipo_ident" name="opcion" id="lst-nacionalidades" required>
+                            <option value="" disabled selected hidden
+                              >Tipo de identificación</option
+                            >
+                            <option value="Juridica">Cédula jurídica</option>
+                            <option value="Nacional">Cédula nacional</option>
+                            <option value="Dimex">DIMEX</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                          </select>
+                        </div>
+                        <div class="input-date-container">
+                            <label>Fecha de nacimiento:</label>
+                            <input class="input-date" type="date" name="fecha_nacimiento" id="date-nacimiento" placeholder="Fecha de nacimiento" required />
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div>
+                            <input class="input-text margin" name="Segundo_nombre" placeholder="Segundo nombre (opcional)" id="txt-segundo_nombre" />
+                        </div>
+                        <div>
+                            <input class="input-text margin" name="Segundo_apellido" placeholder="Segundo apellido (opcional)" id="txt-segundo_apellido" />
+                        </div>
+                        <div>
+                            <input class="input-text margin" name="identificación" placeholder="Número de identificación" id="txt-identificacion" required/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Avatar -->
+            <section id="avatar-selection">
+                <div>
+                    <span>Suba una foto:</span>
+
+                    <!-- CLOUDINARY -->
+                    <div class="input-container-foto foto">
+                        <div>
+                            <img id="user-photo" src="./img/download.jpg" />
+                        </div>
+                        <div>
+                            <button type="button" class="btn orange" id="btn-foto">
+                    Seleccionar
+                  </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="two-colum">
+                    <div class="col">
+                        <input class="input-text" name="contraseña" placeholder="Contraseña" type="password" id="txtContrasena" required />
+                        <input class="input-text" name="correo" placeholder="Correo electrónico" type="text" id="correo-enc-par" required />
+                    </div>
+                    <div class="col">
+                        <input class="input-text margin" name="repetir_contraseña" placeholder="Verificar contraseña" type="password" id="txtConfirmacion" required />
+                    </div>
+                </div>
+            </section>
+        </form>
+        <button class="btn btn1 orange" id="btn-send">Enviar</button>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Modal Ingresar -->
+    <div id="modal-login" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content modal-small">
+            <span id="close-modal-login" class="far fa-window-close modal-close"></span>
+            <h2 class="modal-title">Ingresar</h2>
+            <!-- inputs -->
+            <div class="modal-inputs-container">
+                <input class="input-text" placeholder="Correo electrónico" type="email" />
+                <input class="input-text" placeholder="Contraseña" type="password" />
+
+                <a class="forget-link" href="/restablecer-contrasena.html">Olvidé mi contraseña</a
+          >
+
+          <button type="button" class="btn orange" id="btn-ingresar">
+            Enviar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script
+      src="https://widget.cloudinary.com/v2.0/global/all.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/controlador-registro-encargado-parqueo.js"></script>
+    <script src="./js/services/service-imagen.js"></script>
+    <script src="./js/services/service-parqueo.js"></script>
+    <script src="./js/services/service-registro-enc-parqueo.js"></script>
+    <script src=""></script>
+  </body>
+</html>

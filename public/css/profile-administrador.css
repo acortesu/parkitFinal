@@ -1,0 +1,146 @@
+    /* Estilos generales container IFAM Parkit */
+    
+    .input-textbk {
+        background-color: var(--clr-black);
+        font: var(--typo-input-new);
+        border: none;
+        padding: var(--margin-min) var(--margin-small);
+        color: var(--clr-white);
+        width: 100%;
+        margin-bottom: var(--margin-small);
+        box-sizing: border-box;
+    }
+    
+    .col1 {padding-top: var(--margin-md)
+        margin: 0 var(--margin-small);
+        padding: 0 var(--margin-md-smal);
+    }
+    
+    .col2 {
+        margin: 0 var(--margin-small);
+        padding: 0 var(--margin-md-smal);
+    }
+    /* Bloque IFAM */
+    
+    .first-input {
+        margin-top: var(--margin-md);
+    }
+    
+    .tel-mail-container,
+    .redes-IFAM,
+    .cambio-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    
+    .dob-container {
+        display: flex;
+        align-items: baseline;
+    }
+    
+    .dob-container p {
+        color: var(--clr-white);
+        margin-right: var(--margin-md);
+    }
+    
+    .icon-photo {
+        color: var(--clr-naranja);
+        margin-right: var(--margin-min);
+    }
+    
+    .tel-mail-container input {
+        width: 250px;
+    }
+    
+    .icon-style {
+        color: var(--clr-white);
+        font-size: 20px;
+        margin-right: var(--margin-min);
+    }
+    
+    .dob-container {
+        margin-bottom: var(--margin-md);
+    }
+    
+    .btn_col1 {
+        margin-bottom: var(--margin-md);
+    }
+    /* Bloque Park It */
+    
+    .simbolo {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: var(--clr-black);
+        color: var(--clr-white);
+        font: bold 36px "PT Serif";
+        text-align: center;
+    }
+    
+    .leyenda {
+        color: var(--clr-white);
+        font: var(--typo-header-text);
+    }
+    
+    .input-tipo-cambio {
+        width: 30%;
+    }
+    
+    .input-medio {
+        margin-bottom: var(--margin-md-smal);
+    }
+    
+    .ipt-last {
+        margin-bottom: var(--margin-big);
+    }
+    /* Agregar parqueos */
+    
+    .listado-parqueos {
+        padding: 0 var(--margin-big);
+        padding-top: var(--margin-md);
+    }
+    
+    .agregar-parqueos {
+        display: flex;
+        justify-content: space-between;
+        margin-top: var(--margin-min);
+        align-items: baseline;
+    }
+    
+    .frst-input {
+        padding-top: var(--margin-md);
+    }
+    /* Listar empresas registradas */
+    
+    .greenIcon {
+        color: var(--clr-green);
+        cursor: pointer;
+        margin-left: var(--margin-min);
+    }
+    /* Reportes */
+    
+    .header-reportes {
+        margin-top: var(--margin-big);
+        color: var(--clr-white);
+    }
+    
+    .reportes-administrador {
+        color: var(--clr-white);
+        font: var(--typo-header-text);
+    }
+    
+    .reportes-administrador {
+        color: var(--clr-white);
+        font: var(--typo-header-text);
+    }
+    
+    .reportes-administrador h3 {
+        margin-top: var(--margin-min);
+    }
+    /* Logo Parkit Abajo */
+    
+    .logo-image {
+        width: 100%;
+        text-align: center;
+    }

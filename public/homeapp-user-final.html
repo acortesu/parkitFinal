@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Landing Page</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/d363d1b466.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/dashboard-home.css" />
+    <link rel="stylesheet" href="css/one-parqueo.css" />
+</head>
+
+<body>
+    <div id="page-container">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <!-- Name del active user -->
+                    <span id="nav-user-name"></span>
+                    <div class="round-img">
+                        <img id="nav-user-img" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a id="btn-editar-datos-empresa">Editar perfil</a></li>
+                        <li id="btn-cerrar-sesion"><a href="./index.html">Cerrar sesion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="#" class="link active">Home</a>
+                <a href="#" class="link">Mis reservas</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+                <div id="mapid"></div>
+
+                <div class="dashboard-content">
+                    <div class="sct-finder">
+                        <div class="input-container">
+                            <input class="input-finder" id="input-find-parqueo" type="text" placeholder="buscar estacionamiento" required />
+                        </div>
+                        <div class="ctn-filtrar">
+                            <span class="fas fa-list-alt"> </span>
+                            <p>Filtrar por ubicación</p>
+                        </div>
+                    </div>
+                    <section id="result"></section>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Contenedor general -->
+    <!-- Footer -->
+    <footer>
+        <div class="left">
+            <img class="ifam-log" src="./img/ifam_logo.png" alt="logo ifam" />
+            <p>www.ifam.go.cr</p>
+            <div class="social">
+                <span class="fab fa-facebook-square"></span>
+                <span class="fab fa-instagram"></span>
+            </div>
+            <p>2250-0000 ext 2010</p>
+            <p>info@parkit.com</p>
+        </div>
+        <div class="rigt">
+            <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+        </div>
+    </footer>
+
+    <!-- Referencia script leaflet -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="./js/modal-controller.js"></script>
+    <script src="./js/services/shared-user.js"></script>
+    <script src="./js/services/service-parqueo.js"></script>
+
+    <!-- controlador del nav -->
+    <script src="./js/controlador-user-perfil.js"></script>
+    <!-- controlador de home app -->
+    <script src="./js/actions-homeapp.js"></script>
+
+</body>
+
+</html>

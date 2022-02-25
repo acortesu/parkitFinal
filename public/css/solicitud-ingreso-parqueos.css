@@ -1,0 +1,135 @@
+/* SIGN UP PARQUEOS STYLES */
+
+.form-all-black h2 {
+    font: var(--typo-main-title);
+    font-size: 45px;
+    color: var(--clr-white);
+    margin-top: var(--margin-big);
+    margin-bottom: var(--margin-md);
+}
+
+.form-all-black.dashboard h2 {
+    font: var(--typo-subheader);
+}
+
+.form-all-black h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--clr-white);
+    margin-bottom: var(--margin-md);
+}
+
+.form-all-black .col:nth-child(2) {
+    margin-left: 10px;
+}
+
+.form-all-black .tipo_ident,
+.form-all-black .num_ident,
+.form-all-black .perm,
+.form-all-black #sct-horario {
+    margin-bottom: var(--margin-md);
+}
+
+.form-all-black .input-checkbox,
+.form-all-black .input-file,
+.form-all-black label {
+    color: var(--clr-white);
+}
+
+.form-all-black label {
+    margin-bottom: var(--margin-small);
+}
+
+.form-all-black .btn1 {
+    margin-bottom: var(--margin-big);
+}
+
+.form-all-black .fa-file-alt {
+    color: var(--clr-naranja);
+    margin-left: var(--margin-min);
+}
+
+.form-all-black .inpt-time {
+    margin-right: var(--margin-min);
+}
+
+.form-all-black .tbl-horario td {
+    color: var(--clr-white);
+    font-family: var(--typo-input);
+    margin-right: var(--margin-small);
+    width: 5%;
+}
+
+.form-all-black .tbl-small {
+    font-size: 12px;
+}
+
+.form-all-black #avatar-selection span {
+    color: var(--clr-white);
+}
+
+.form-all-black .avatar-log {
+    height: 70px;
+    margin-bottom: var(--margin-md-smal);
+}
+
+.form-all-black .doble-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.form-all-black .doble-container p {
+    color: var(--clr-white);
+    margin-right: var(--margin-min);
+}
+
+.form-all-black #sct-horario p {
+    color: var(--clr-white);
+    margin-bottom: var(--margin-min);
+}
+
+.form-all-black #mapid {
+    margin-bottom: var(--margin-min);
+}
+
+.form-all-black #sct-map {
+    margin-bottom: var(--margin-md);
+}
+
+.form-all-black #user-photo {
+    height: 70px;
+    width: auto;
+}
+
+.form-all-black #btn-foto,
+#btn-avatar {
+    margin-bottom: var(--margin-md);
+}
+
+.form-all-black .avatars-container {
+    display: flex;
+}
+
+.form-all-black .radio-estado {
+    display: flex;
+    align-items: baseline;
+}
+
+.form-all-black .title-modificar {
+    margin-top: 0px;
+}
+
+.form-all-black .input-container-foto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#content-wrap .edit-profile {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: var(--clr-white);
+    cursor: pointer;
+}

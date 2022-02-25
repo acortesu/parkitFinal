@@ -1,0 +1,112 @@
+    .nombre-parqueo {
+        font: var(--typo-header-text);
+    }
+    
+    .edit-profile {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: var(--clr-white);
+        cursor: pointer;
+    }
+    
+    .num-input {
+        border: none;
+        text-decoration: none;
+        background-color: transparent;
+        color: var(--clr-white);
+        font: var(--typo-header-open);
+        padding-top: var(--margin-min);
+        vertical-align: middle;
+        text-align: right;
+        width: 140px;
+        height: 139px;
+        align-items: baseline;
+    }
+    
+    .modificar-datos,
+    .titulo-tarifas-espacios {
+        display: flex;
+        align-items: baseline;
+    }
+    
+    .ctn-two-inputs {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+    }
+    
+    .ctn-two-inputs .fas {
+        margin-left: var(--margin-min);
+    }
+    
+    .edit-convenio {
+        color: var(--clr-green);
+        cursor: pointer;
+    }
+    
+    .edit-datos-parqueo {
+        color: var(--clr-white);
+        margin-bottom: 60px;
+    }
+    
+    .edit-datos-parqueo .tittle1-edit-park {
+        font: var(--typo-title-pt);
+        margin-bottom: var(--margin-big);
+        margin-top: var(--margin-md);
+    }
+    
+    .edit-park {
+        margin-top: 20px;
+        margin-left: 20px;
+        color: var(--clr-white);
+        cursor: pointer;
+    }
+    
+    .edit-datos-parqueo .tittle2-edit-park {
+        font: var(--typo-title-pt);
+        margin-bottom: var(--margin-md-smal);
+    }
+    
+    .reportes {
+        font: var(--typo-side-link);
+    }
+    
+    .inline {
+        font: var(--typo-banner-title-reg);
+    }
+    
+    .dashboard-content .input-select {
+        margin-bottom: var(--margin-small);
+    }
+    
+    .dashboard-content .radio-estado,
+    .cnt-rep {
+        display: flex;
+        align-items: baseline;
+    }
+    
+    .edit-datos-parqueo .fas {
+        color: var(--clr-green);
+        margin-left: var(--margin-min);
+        cursor: pointer;
+    }
+    
+    .dashboard-content .radio-estado p,
+    label {
+        color: var(--clr-white);
+        margin-right: var(--margin-min);
+    }
+    
+    .dashboard-content .cantidad-espacios {
+        margin-bottom: var(--margin-md-smal);
+    }
+    
+    .dashboard-content h2 {
+        margin-top: var(--margin-md);
+        margin-bottom: var(--margin-min);
+    }
+    
+    .dashboard-content #btn-buscar-convenio {
+        margin-bottom: var(--margin-md);
+    }

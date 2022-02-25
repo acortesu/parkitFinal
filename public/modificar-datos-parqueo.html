@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Parkit - Modificar datos del parqueo</title>
+    <!-- Link de FontAwesome -->
+    <script src="https://kit.fontawesome.com/daa42c8e16.js" crossorigin="anonymous"></script>
+    <!-- Referencia del font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300&family=PT+Serif:wght@700&display=swap" rel="stylesheet" />
+    <!-- Referencia estilos leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <!-- Referencia a archivos CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/solicitud-ingreso-parqueos.css" />
+</head>
+
+<body>
+    <div id="page-container">
+        <!-- Navbar superior -->
+        <nav id="main-nav" class="in-dashboard">
+            <div class="nav-content">
+                <div class="active-user">
+                    <span>Brayan</span>
+                    <div class="round-img">
+                        <img src="./img/brayan.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="drop-down-options">
+                    <ul>
+                        <li><a href="#">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Editar perfil</a></li>
+                        <li><a href="/index.html">Cerrar sesción</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <nav id="side-nav">
+            <img class="brand" src="./img/full-logo/purple.png" alt="logo" />
+            <div class="nav-content">
+                <a href="/homeapp-encargado-parqueo.html" class="link">Home</a>
+                <a href="#" class="link active">Agregar convenio</a>
+                <a href="#" class="link">Mis convenios</a>
+                <a href="#" class="link">Tarifas y espacios</a>
+                <a href="#" class="link">Reportes</a>
+            </div>
+        </nav>
+        <div id="content-wrap">
+            <main id="dashboard">
+                <section class="profile">
+                    <div class="profile-container">
+                        <div class="img-container">
+                            <img src="./img/brayan.jpg" alt="" />
+                        </div>
+
+                        <div class="info-personal">
+                            <h2>Brayan Gonzales</h2>
+                            <h3 class="nombre-parqueo">Encargado del Parqueo La Flor</h3>
+                            <p>1-1101-0475</p>
+                            <p>frodriguez@gmail.com</p>
+                        </div>
+                        <div class="edit-profile">
+                            <span class="far fa-edit" id="#btn-modificar-datos-user"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="form-all-black">
+                    <form id="sign-in-parqueo">
+                        <section>
+                            <h2 class="title-modificar">Modificar datos del parqueo</h2>
+                        </section>
+                        <section id="sct-promo-2">
+                            <div class="two-colum">
+                                <div class="col">
+                                    <div class="input-container">
+                                        <input class="input-text" id="txt-nombre_dueno" placeholder="Nombre de sociedad o nombre completo del dueño(a) del parqueo" />
+                                    </div>
+
+                                    <select class="input-select tipo_ident" name="opcion" id="lst-nacionalidades">
+                <option value="" disabled selected hidden
+                  >Tipo de identificación</option
+                >
+                <option value="Juridica">Cédula jurídica</option>
+                <option value="Nacional">Cédula nacional</option>
+                <option value="Dimex">DIMEX</option>
+                <option value="Pasaporte">Pasaporte</option>
+              </select>
+
+                                    <div class="input-container">
+                                        <input class="input-text" id="txt-nombre_parqueo" placeholder="Nombre del parqueo" />
+                                    </div>
+
+                                    <select class="input-select" name="opcion" id="lst-provincia">
+
+                <option value="" disabled selected hidden>Provincia</option>
+                <option value="San_Jose">San José</option>
+                <option value="Cartago">Cartago</option>
+                <option value="Heredia">Heredia</option>
+                <option value="Alajuela">Alajuela</option>
+                <option value="Puntarenas">Puntarenas</option>
+                <option value="Limon">Limón</option>
+                <option value="Guanacaste">Guanacaste</option>
+              </select>
+
+                                    <select class="input-select" name="canton" id="lst-canton">
+                <option value="" disabled selected hidden>Cantón</option>
+                <option value="canton">Cantón 1</option>
+                <option value="canton">Cantón 2</option>
+              </select>
+
+                                    <select class="input-select distrito" name="Distrito" id="lst-distrito">
+                <option value="" disabled selected hidden>Distrito</option>
+                <option value="distrito">Distrito 1</option>
+                <option value="distrito">Distrito 2</option>
+              </select>
+                                    <div class="doble-container">
+                                        <p> Adjunte el permiso de funcionamiento:</p>
+                                        <span class="fas fa-file-alt"></span>
+                                        <input class="perm" type="file" id="file-permiso" name="permiso" placeholder="" />
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col">
+                                    <div class="input-container">
+                                        <input type="email" class="input-text" id="txt-email" placeholder="Correo electrónico" />
+                                    </div>
+
+                                    <div class="input-container">
+                                        <input type="text" class="input-text num_ident" id="txt-identificacion" placeholder="Número de identificación" />
+                                    </div>
+                                    <div class="input-checkbox">
+                                        <input type="checkbox" id="txt-nombre" />
+                                        <label for="cbx-centro_comercial">¿El parqueo se encuentra en un centro comercial?</label
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="sct-map">
+          <div id="mapid"></div>
+          <label>Registre la ubicación del parqueo en el mapa.</label>
+                        </section>
+
+                        <section id="sct-form-2">
+                            <div class="two-colum">
+                                <div class="col">
+                                    <div class="input-container">
+                                        <input class="input-text" placeholder="Dirección exacta" id="ipt_direccion" type="text" />
+                                    </div>
+                                    <div class="input-container">
+                                        <div id="sct-horario">
+                                            <p>Horario de atención del parqueo:</p>
+                                            <table class="tbl-horario">
+                                                <tr>
+                                                    <td>Lunes:</td>
+                                                    <td class="tbl-small">
+                                                        Apertura:
+                                                        <input class="inpt-time" type="time" value="lunes-apertura" id="ipt-apertura" />
+                                                    </td>
+                                                    <td class="tbl-small">
+                                                        Cierre:
+                                                        <input class="inpt-time" type="time" value="lunes-cierre" id="ipt-cierre" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Martes:</td>
+                                                    <td class="tbl-small">
+                                                        Apertura:
+                                                        <input class="inpt-time" type="time" value="martes-apertura" id="ipt-apertura" />
+                                                    </td>
+                                                    <td class="tbl-small">
+                                                        Cierre:
+                                                        <input class="inpt-time" type="time" value="martes-cierre" id="ipt-cierre" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Miércoles:</td>
+                                                    <td class="tbl-small">
+                                                        Apertura:
+                                                        <input class="inpt-time" type="time" value="miercoles-apertura" id="ipt-apertura" />
+                                                    </td>
+                                                    <td class="tbl-small">
+                                                        Cierre:
+                                                        <input class="inpt-time" type="time" value="miercoles-cierre" id="ipt-cierre" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Jueves:</td>
+                                                    <td class="tbl-small">
+                                                        Apertura:
+                                                        <input class="inpt-time" type="time" value="jueves-apertura" id="ipt-apertura" />
+                                                    </td>
+                                                    <td class="tbl-small">
+                                                        Cierre:
+                                                        <input class="inpt-time" type="time" value="jueves-cierre" id="ipt-cierre" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Viernes:</td>
+                                                    <td class="tbl-small">
+                                                        Apertura:
+                                                        <input class="inpt-time" type="time" value="viernes-apertura" id="ipt-apertura" />
+                                                    </td>
+                                                    <td class="tbl-small">
+                                                        Cierre:
+                                                        <input class="inpt-time" type="time" value="viernes-cierre" id="ipt-cierre" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Sábado:</td>
+                                                    <td class="tbl-small">
+                                                        Apertura:
+                                                        <input class="inpt-time" type="time" value="sabado-apertura" id="ipt-apertura" />
+                                                    </td>
+                                                    <td class="tbl-small">
+                                                        Cierre:
+                                                        <input class="inpt-time" type="time" value="sabado-cierre" id="ipt-cierre" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Domingo:</td>
+                                                    <td class="tbl-small">
+                                                        Apertura:
+                                                        <input class="inpt-time" type="time" value="domingo-apertura" id="ipt-apertura" />
+                                                    </td>
+                                                    <td class="tbl-small">
+                                                        Cierre:
+                                                        <input class="inpt-time" type="time" value="domingo-cierre" id="ipt-cierre" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="input-container doble-container">
+                                        <p>Fecha de apertura del parqueo:</p>
+                                        <input class="input-date" id="txt-fecha" type="date" />
+                                    </div>
+                                    <div class="input-container">
+                                        <input class="input-file" type="file" id="fotos_parqueo" name="foto_parqueo" />
+                                        <label for="foto">
+                  Adjunte fotos del parqueo:
+                  <span class="far fa-file-image"></span
+                ></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <button class="btn orange btn1" id="btn-modificar">Guardar</button>
+                    </form>
+                    </div>
+            </main>
+            </div>
+            </div>
+            <!-- Logo avatar -->
+            <section id="ftr-avatar">
+                <img class="footer-avatar center" src="./img/small-logo/parkit-white.png " />
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <div class="left ">
+                    <img class="ifam-log " src="./img/ifam_logo.png " alt="logo ifam " />
+                    <p>www.ifam.go.cr</p>
+                    <div class="social ">
+                        <span class="fab fa-facebook-square "></span>
+                        <span class="fab fa-instagram "></span>
+                    </div>
+                    <p>2250-0000 ext 2010</p>
+                    <p>info@parkit.com</p>
+                </div>
+                <div class="rigt ">
+                    <p>Todos los derechos reservados. 2020 &copy; Parkit</p>
+                </div>
+            </footer>
+
+
+            <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+            <script src="./js/controlador-modificar-datos-parqueo.js"></script>
+            <script src="./js/map.js"></script>
+</body>
+
+</html>
